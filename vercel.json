@@ -1,0 +1,13 @@
+{
+  "github": {
+    "autoAlias": true,
+    "enabled": true
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://github.com/grikomsn/dotfiles",
+      "permanent": true
+    }
+  ]
+}
