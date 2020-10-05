@@ -2,7 +2,7 @@
 
 # install vercel zsh theme
 echo "Installing vercel.zsh-theme..."
-curl https://zsh-theme.vercel.app/vercel.zsh-theme -Lo ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/vercel.zsh-theme
+curl https://zsh-theme.vercel.app/vercel-alt.zsh-theme -Lo ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/vercel.zsh-theme
 
 # install zsh-syntax-highlighting plugin
 echo "Installing zsh-syntax-highlighting..."
@@ -44,6 +44,19 @@ local MAS_IDS=(
   1470168007 # Vectornator Pro
   408981434  # iMovie
 )
+
+echo "Downloading .zshrc..."
+curl -fsSL https://df.griko.id/macos/.zshrc >~/.zshrc
+
+echo "Downloading .profile..."
+curl -fsSL https://df.griko.id/macos/.profile >~/.profile
+
+echo "Downloading ~/.ssh/config..."
+mkdir -p ~/.ssh &&
+  curl -fsSL https://df.griko.id/macos/.ssh/config >~/.ssh/config
+
+echo "Loading .zshrc..."
+source ~/.zshrc
 
 # install apps from app store
 echo "Installing apps via app store..."
