@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # install vercel zsh theme
 echo "Installing vercel.zsh-theme..."
@@ -64,11 +64,11 @@ mas install $MAS_IDS
 
 # install deno
 echo "Installing Deno..."
-/bin/bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
+sh -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 
 # install rustup
 echo "Installing Rust..."
-/bin/bash -c "$(curl -fsSL https://sh.rustup.rs)"
+sh -c "$(curl -fsSL https://sh.rustup.rs)"
 
 # de-quarantine quicklook directory (https://github.com/sindresorhus/quick-look-plugins)
 echo "De-quarantining quicklook directory..."

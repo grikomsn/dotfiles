@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # populate common directories
 echo "Creating Projects, Temporary, and Workspace directory in home..."
@@ -11,7 +11,7 @@ xcode-select --install
 # install homebrew
 read -p "Press any key to install Homebrew..."
 echo "Installing Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install homebrew taps
 echo "Installing Homebrew casks..."
@@ -26,6 +26,6 @@ brew install aria2 curl ffmpeg gh git hub jq mas nvm tree vim youtube-dl zsh
 
 # install oh-my-zsh
 echo "Installing oh-my-zsh..."
-/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Done! ✨"
