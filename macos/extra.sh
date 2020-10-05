@@ -77,15 +77,6 @@ echo "Installing npm, yarn, and various packages..."
 npm -g i npm yarn &&
   yarn global add eslint netlify-cli prettier serve speed-test vercel
 
-echo "Downloading .zshrc..."
-curl https://df.griko.id/macos/.zshrc -L >~/.zshrc
-
-echo "Downloading .profile..."
-curl https://df.griko.id/macos/.profile -L >~/.profile
-
-echo "Downloading ~/.ssh/config..."
-curl https://df.griko.id/macos/.ssh/config -L >~/.ssh/config
-
 echo "Downloading Paragon NTFS to ~/Downloads..."
 wget -P ~/Downloads https://dl.paragon-software.com/esd/Paragon-1091-PEU_MacInstallUnlock_15.5.106.dmg
 

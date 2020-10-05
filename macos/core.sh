@@ -28,4 +28,17 @@ brew install aria2 curl ffmpeg gh git hub jq mas nvm tree vim youtube-dl zsh
 echo "Installing oh-my-zsh..."
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "Downloading .zshrc..."
+curl -fsSL https://df.griko.id/macos/.zshrc >~/.zshrc
+
+echo "Downloading .profile..."
+curl -fsSL https://df.griko.id/macos/.profile >~/.profile
+
+echo "Downloading ~/.ssh/config..."
+mkdir -p ~/.ssh &&
+  curl -fsSL https://df.griko.id/macos/.ssh/config >~/.ssh/config
+
+echo "Loading .zshrc..."
+source ~/.zshrc
+
 echo "Done! ✨"
