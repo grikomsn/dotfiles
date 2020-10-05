@@ -38,7 +38,4 @@ echo "Downloading ~/.ssh/config..."
 mkdir -p ~/.ssh &&
   curl -fsSL https://df.griko.id/macos/.ssh/config >~/.ssh/config
 
-echo "Loading .zshrc..."
-source ~/.zshrc
-
 echo "Done! ✨"
