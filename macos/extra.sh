@@ -15,6 +15,7 @@ brew cask install \
   cyberduck \
   discord discord-ptb docker \
   firefox-developer-edition font-jetbrains-mono fork \
+  gitkraken gpg-suite-no-mail \
   insomnia iterm2 \
   jetbrains-toolbox \
   lulu \
