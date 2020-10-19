@@ -22,7 +22,8 @@ brew cask install \
   macs-fan-control megasync mendeley microsoft-office \
   skyfonts smooze spectacle spotify steam \
   tandem \
-  visual-studio-code \
+  visual-studio-code vlc \
+  webtorrent \
   zoomus
 
 # app store app ids
