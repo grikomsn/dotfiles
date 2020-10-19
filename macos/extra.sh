@@ -2,7 +2,7 @@
 
 # install vercel zsh theme
 echo "Installing vercel.zsh-theme..."
-curl https://zsh-theme.vercel.app/vercel-alt.zsh-theme -Lo ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/vercel.zsh-theme
+curl https://raw.githubusercontent.com/grikomsn/vercel-zsh-theme/main/vercel-alt.zsh-theme -Lo ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/vercel.zsh-theme
 
 # install zsh-syntax-highlighting plugin
 echo "Installing zsh-syntax-highlighting..."
