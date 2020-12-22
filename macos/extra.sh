@@ -6,7 +6,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # install homebrew casks
 echo "Installing apps via Homebrew casks..."
-brew cask install \
+brew install --cask \
   bartender \
   cyberduck \
   discord docker \
