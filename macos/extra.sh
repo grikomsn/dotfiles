@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# install vercel zsh theme
-echo "Installing vercel.zsh-theme..."
-curl https://raw.githubusercontent.com/grikomsn/vercel-zsh-theme/main/vercel-alt.zsh-theme -Lo ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/vercel.zsh-theme
-
 # install zsh-syntax-highlighting plugin
 echo "Installing zsh-syntax-highlighting..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -13,30 +9,29 @@ echo "Installing apps via Homebrew casks..."
 brew cask install \
   bartender \
   cyberduck \
-  discord discord-ptb docker \
+  discord docker \
   firefox-developer-edition font-jetbrains-mono fork \
   gitkraken gpg-suite-no-mail \
   insomnia iterm2 \
   jetbrains-toolbox \
-  lulu \
-  macs-fan-control megasync mendeley microsoft-office \
+  keyboardcleantool \
+  macs-fan-control megasync mendeley microsoft-auto-update microsoft-office \
+  obs obs-virtualcam \
   skyfonts smooze spectacle spotify steam \
   tandem \
   visual-studio-code vlc \
-  webtorrent \
-  zoomus
+  webtorrent
 
-# app store app ids
+# app store app ids (use `mas list | sort -k2 -` to view installed apps)
 local MAS_IDS=(
   1333542190 # 1Password 7
-  1402042596 # AdBlock
   937984704  # Amphetamine
   1470584107 # Dato
-  1423210932 # Flow
   1032155965 # Foxit Reader
   1351639930 # Gifski
   1513574319 # Glance – Quick Look Plugin
   412759995  # Guidance
+  409183694  # Keynote
   539883307  # LINE
   1464122853 # NextDNS
   407963104  # Pixelmator

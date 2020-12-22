@@ -22,7 +22,7 @@ brew tap homebrew/cask &&
 
 # install homebrew cli apps
 echo "Installing essential apps via Homebrew..."
-brew install aria2 curl ffmpeg gh git hub jq mas nvm tree vim wget youtube-dl zsh
+brew install aria2 curl ffmpeg gh git hub jq mas nvm python@3.9 tree vim wget youtube-dl zsh
 
 # install oh-my-zsh
 echo "Installing oh-my-zsh..."
