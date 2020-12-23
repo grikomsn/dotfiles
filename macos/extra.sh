@@ -17,6 +17,7 @@ brew install --cask \
   keyboardcleantool \
   macs-fan-control megasync mendeley microsoft-auto-update microsoft-office \
   obs obs-virtualcam \
+  paragon-ntfs \
   skyfonts smooze spectacle spotify steam \
   tandem \
   visual-studio-code vlc \
@@ -26,7 +27,6 @@ brew install --cask \
 local MAS_IDS=(
   1333542190 # 1Password 7
   937984704  # Amphetamine
-  1470584107 # Dato
   1032155965 # Foxit Reader
   1351639930 # Gifski
   1513574319 # Glance – Quick Look Plugin
@@ -38,7 +38,6 @@ local MAS_IDS=(
   803453959  # Slack
   747648890  # Telegram
   425424353  # The Unarchiver
-  1470168007 # Vectornator Pro
   408981434  # iMovie
 )
 
