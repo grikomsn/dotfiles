@@ -86,7 +86,4 @@ echo "Installing npm, yarn, and various packages..."
 npm -g i npm yarn &&
   yarn global add eslint netlify-cli prettier serve speed-test vercel
 
-echo "Downloading Paragon NTFS to ~/Downloads..."
-wget -P ~/Downloads https://dl.paragon-software.com/esd/Paragon-1091-PEU_MacInstallUnlock_15.5.106.dmg
-
 echo "Done! ✨"
