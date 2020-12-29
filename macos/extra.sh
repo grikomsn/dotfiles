@@ -8,19 +8,19 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 echo "Installing apps via Homebrew casks..."
 brew install --cask \
   bartender \
-  cyberduck \
+  cleanmymac cyberduck \
   discord docker \
-  firefox-developer-edition font-jetbrains-mono fork \
+  figma firefox-developer-edition font-jetbrains-mono fork \
   gitkraken gpg-suite-no-mail \
   insomnia iterm2 \
   jetbrains-toolbox \
   keyboardcleantool \
-  macs-fan-control megasync mendeley microsoft-auto-update microsoft-office \
+  macs-fan-control megasync mendeley microsoft-auto-update microsoft-edge-dev microsoft-office \
   obs obs-virtualcam \
   paragon-ntfs \
-  skyfonts smooze spectacle spotify steam \
+  skyfonts spectacle spotify steam streamlabs-obs \
   tandem \
-  visual-studio-code vlc \
+  vanilla visual-studio-code vlc \
   webtorrent
 
 # app store app ids (use `mas list | sort -k2 -` to view installed apps)
