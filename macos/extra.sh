@@ -86,4 +86,8 @@ echo "Installing npm, yarn, and various packages..."
 npm -g i npm yarn &&
   yarn global add eslint netlify-cli prettier serve speed-test vercel
 
+# fix codesign related issues
+codesign --remove-signature /Applications/GitKraken.app/Contents/Frameworks/GitKraken\ Helper\ \(Renderer\).app
+codesign -f -s - /Applications/Discord.app/Contents/Frameworks/Discord\ Helper\ \(Renderer\).app
+
 echo "Done! ✨"
