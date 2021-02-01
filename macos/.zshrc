@@ -1,9 +1,10 @@
 # Custom path envs
+export POSTGRESAPP_INSTALL=/Applications/Postgres.app/Contents/Versions/latest
 export DENO_INSTALL=$HOME/.deno
 export RUST_INSTALL=$HOME/.cargo
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$DENO_INSTALL/bin:$RUST_INSTALL/bin:$PATH
+export PATH=$POSTGRESAPP_INSTALL/bin:$DENO_INSTALL/bin:$RUST_INSTALL/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
