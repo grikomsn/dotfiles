@@ -10,18 +10,19 @@ brew install --cask \
   bartender \
   cleanmymac cyberduck \
   discord docker \
-  figma firefox-developer-edition font-jetbrains-mono fork \
+  figma firefox-developer-edition font-jetbrains-mono \
   gitkraken gpg-suite-no-mail \
   insomnia iterm2 \
   jetbrains-toolbox \
   keyboardcleantool \
   macs-fan-control megasync mendeley microsoft-auto-update microsoft-edge-dev microsoft-office \
   obs obs-virtualcam \
-  paragon-ntfs \
-  skyfonts spectacle spotify steam streamlabs-obs \
+  paragon-ntfs postgres \
+  signal skyfonts spectacle spotify steam streamlabs-obs \
   tandem \
-  vanilla visual-studio-code vlc \
-  webtorrent
+  visual-studio-code vlc \
+  webtorrent \
+  zoom
 
 # app store app ids (use `mas list | sort -k2 -` to view installed apps)
 local MAS_IDS=(
@@ -85,9 +86,5 @@ nvm install --lts &&
 echo "Installing npm, yarn, and various packages..."
 npm -g i npm yarn &&
   yarn global add eslint netlify-cli prettier serve speed-test vercel
-
-# fix codesign related issues
-codesign --remove-signature /Applications/GitKraken.app/Contents/Frameworks/GitKraken\ Helper\ \(Renderer\).app
-codesign -f -s - /Applications/Discord.app/Contents/Frameworks/Discord\ Helper\ \(Renderer\).app
 
 echo "Done! ✨"
