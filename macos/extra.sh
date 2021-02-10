@@ -12,12 +12,12 @@ brew install --cask \
   discord docker \
   figma firefox-developer-edition font-jetbrains-mono \
   gitkraken gpg-suite-no-mail \
-  insomnia iterm2 \
+  insomnia iriunwebcam iterm2 \
   jetbrains-toolbox \
   keyboardcleantool \
   macs-fan-control megasync mendeley microsoft-auto-update microsoft-edge-dev microsoft-office \
   obs obs-virtualcam \
-  paragon-ntfs postgres \
+  paragon-ntfs paw postgres \
   signal skyfonts spectacle spotify steam streamlabs-obs \
   tandem \
   visual-studio-code vlc \
