@@ -10,37 +10,41 @@ brew install --cask \
   bartender \
   cleanmymac cyberduck \
   discord docker \
-  figma firefox-developer-edition font-jetbrains-mono \
+  figma firefox-developer-edition font-jetbrains-mono font-jetbrains-mono-nerd-font \
   gitkraken gpg-suite-no-mail \
-  insomnia iriunwebcam iterm2 \
+  iriunwebcam iterm2 \
   jetbrains-toolbox \
   keyboardcleantool \
   macs-fan-control megasync mendeley microsoft-auto-update microsoft-edge-dev microsoft-office \
   obs obs-virtualcam \
   paragon-ntfs paw postgres \
-  signal skyfonts spectacle spotify steam streamlabs-obs \
+  spectacle spotify steam \
   tandem \
   visual-studio-code vlc \
-  webtorrent \
-  zoom
+  webtorrent
 
 # app store app ids (use `mas list | sort -k2 -` to view installed apps)
 local MAS_IDS=(
   1333542190 # 1Password 7
   937984704  # Amphetamine
+  1447043133 # Cursor Pro
+  1503988785 # Entity Pro
   1032155965 # Foxit Reader
   1351639930 # Gifski
-  1513574319 # Glance – Quick Look Plugin
   412759995  # Guidance
-  409183694  # Keynote
+  408981434  # iMovie
   539883307  # LINE
   1464122853 # NextDNS
-  407963104  # Pixelmator
-  803453959  # Slack
+  1289583905 # Pixelmator Pro
   747648890  # Telegram
   425424353  # The Unarchiver
-  408981434  # iMovie
 )
+
+echo "Downloading .config files..."
+mkdir -p ~/.config/{coc/extensions,neovim}
+curl -fsSL https://df.griko.id/.config/coc/extensions/package.json >~/.config/coc/extensions/package.json
+curl -fsSL https://df.griko.id/.config/neovim/coc-settings.json >~/.config/neovim/coc-settings.json
+curl -fsSL https://df.griko.id/.config/neovim/init.vim >~/.config/neovim/init.vim
 
 echo "Downloading .zshrc..."
 curl -fsSL https://df.griko.id/macos/.zshrc >~/.zshrc
@@ -85,6 +89,10 @@ nvm install --lts &&
 # prep npm and yarn
 echo "Installing npm, yarn, and various packages..."
 npm -g i npm yarn &&
-  yarn global add eslint netlify-cli prettier serve speed-test vercel
+  yarn global add eslint graphql-language-service-cli lerna neovim prettier serve speed-test vercel
+
+# prep neovim
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
+  --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Done! ✨"
