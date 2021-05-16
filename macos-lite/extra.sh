@@ -11,22 +11,18 @@ brew install --cask \
   macs-fan-control microsoft-auto-update microsoft-office \
   spotify \
   vlc \
-  webtorrent \
-  zoom
+  webtorrent
 
 # app store app ids (use `mas list | sort -k2 -` to view installed apps)
 local MAS_IDS=(
   937984704  # Amphetamine
   1032155965 # Foxit Reader
-  1351639930 # Gifski
-  1513574319 # Glance – Quick Look Plugin
   412759995  # Guidance
-  409183694  # Keynote
+  408981434  # iMovie
   539883307  # LINE
   1464122853 # NextDNS
   747648890  # Telegram
   425424353  # The Unarchiver
-  408981434  # iMovie
 )
 
 echo "Downloading .zshrc..."
