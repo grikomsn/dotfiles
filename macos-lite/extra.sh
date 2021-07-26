@@ -7,9 +7,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # install homebrew casks
 echo "Installing apps via Homebrew casks..."
 brew install --cask \
+  google-chrome \
   keyboardcleantool \
   macs-fan-control microsoft-auto-update microsoft-office \
-  spotify \
+  spectacle spotify \
   vlc \
   webtorrent
 
