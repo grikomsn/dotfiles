@@ -14,7 +14,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jparise/vim-graphql'
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 
