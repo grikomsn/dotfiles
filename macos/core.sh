@@ -22,7 +22,7 @@ brew tap homebrew/cask &&
 
 # install homebrew cli apps
 echo "Installing essential apps via Homebrew..."
-brew install curl ffmpeg fzf gh git hub jq mas neovim python@3.9 tree wget youtube-dl zsh
+brew install curl ag ffmpeg fzf gh git hub jq mas neovim python@3.9 tree wget youtube-dl zsh
 
 # install oh-my-zsh
 echo "Installing oh-my-zsh..."
