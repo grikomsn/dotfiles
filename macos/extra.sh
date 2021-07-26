@@ -41,10 +41,10 @@ local MAS_IDS=(
 )
 
 echo "Downloading .config files..."
-mkdir -p ~/.config/{coc/extensions,neovim}
+mkdir -p ~/.config/{coc/extensions,nvim}
 curl -fsSL https://df.griko.id/.config/coc/extensions/package.json >~/.config/coc/extensions/package.json
-curl -fsSL https://df.griko.id/.config/neovim/coc-settings.json >~/.config/neovim/coc-settings.json
-curl -fsSL https://df.griko.id/.config/neovim/init.vim >~/.config/neovim/init.vim
+curl -fsSL https://df.griko.id/.config/nvim/coc-settings.json >~/.config/nvim/coc-settings.json
+curl -fsSL https://df.griko.id/.config/nvim/init.vim >~/.config/nvim/init.vim
 
 echo "Downloading .zshrc..."
 curl -fsSL https://df.griko.id/macos/.zshrc >~/.zshrc
