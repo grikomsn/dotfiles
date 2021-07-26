@@ -16,12 +16,11 @@ brew install --cask \
 # app store app ids (use `mas list | sort -k2 -` to view installed apps)
 local MAS_IDS=(
   937984704  # Amphetamine
-  1032155965 # Foxit Reader
+  1032155965 # Foxit PDF Reader
+  1351639930 # Gifski
   412759995  # Guidance
-  408981434  # iMovie
   539883307  # LINE
   1464122853 # NextDNS
-  747648890  # Telegram
   425424353  # The Unarchiver
 )
 

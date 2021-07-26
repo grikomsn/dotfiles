@@ -23,16 +23,17 @@ brew install --cask \
   visual-studio-code vlc \
   webtorrent
 
-# app store app ids (use `mas list | sort -k2 -` to view installed apps)
+# app store app ids (use `mas list | sort -b -k2` to view installed apps)
 local MAS_IDS=(
   1333542190 # 1Password 7
+  824171161  # Affinity Designer
   937984704  # Amphetamine
   1447043133 # Cursor Pro
   1503988785 # Entity Pro
-  1032155965 # Foxit Reader
+  1423210932 # Flow
+  1032155965 # Foxit PDF Reader
   1351639930 # Gifski
   412759995  # Guidance
-  408981434  # iMovie
   539883307  # LINE
   1464122853 # NextDNS
   1289583905 # Pixelmator Pro
