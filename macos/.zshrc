@@ -6,6 +6,7 @@ export RUST_INSTALL=$HOME/.cargo
 # If you come from bash you might have to change your $PATH.
 export PATH=$POSTGRESAPP_INSTALL/bin:$DENO_INSTALL/bin:$RUST_INSTALL/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.fnm:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -74,7 +75,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew common-aliases docker git last-working-dir nvm pip rust rustup sudo virtualenv zsh-syntax-highlighting)
+plugins=(brew common-aliases docker git last-working-dir pip rust rustup sudo virtualenv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,30 +109,25 @@ export LANG=en_US.UTF-8
 alias git="hub"
 alias vim="nvim"
 
-# Integration and hooks for nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# Integration for fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Integration and overrides for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+# Custom function to reinstall yarn global packages
+yarn_update_globals() {
+  local YARN_GLOBAL_PACKAGES=(
+    eslint
+    graphql-language-service-cli
+    lerna
+    neovim
+    node-jose-tools
+    prettier
+    serve
+    speed-test
+    vercel
+  )
+  yarn global add $YARN_GLOBAL_PACKAGES
+}

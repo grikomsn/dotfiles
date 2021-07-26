@@ -67,6 +67,10 @@ mas install $MAS_IDS
 echo "Installing Deno..."
 sh -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 
+# install fnm using automated script
+echo "Installing fnm..."
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+
 # install rustup
 echo "Installing Rust..."
 sh -c "$(curl -fsSL https://sh.rustup.rs)"
@@ -81,15 +85,13 @@ git config --global user.name "Griko Nibras" &&
   git config --global user.email "git@griko.id" &&
   git config --global init.defaultBranch main
 
-# prep nvm
-echo "Installing Node.js LTS via nvm..."
-nvm install --lts &&
-  nvm alias default lts/\*
+# prep fnm
+echo "Installing Node.js LTS via fnm..."
+fnm install --lts
 
 # prep npm and yarn
 echo "Installing npm, yarn, and various packages..."
-npm -g i npm yarn &&
-  yarn global add eslint graphql-language-service-cli lerna neovim prettier serve speed-test vercel
+npm -g i npm yarn && yarn_update_globals
 
 # prep neovim
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
