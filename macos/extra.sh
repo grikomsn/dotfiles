@@ -109,4 +109,7 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
 echo "Installing 'main' virtualenv..."
 mkdir -p ~/.virtualenvs && virtualenv ~/.virtualenvs/main
 
+# trigger ssh-agent
+eval "$(ssh-agent -s)"
+
 echo "Done! ✨"

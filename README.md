@@ -37,6 +37,7 @@ zsh -c "$(curl -fsSL https://df.griko.id/macos/extra.sh)"
 **Extra steps**
 
 - If `xcode-select --install` does not work, download manually at <https://developer.apple.com/download/more/?=xcode>
+- Remember to `eval "$(ssh-agent -s)"` and `ssh-add -K`
 
 ## macOS (lite)
 
