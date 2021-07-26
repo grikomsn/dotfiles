@@ -18,7 +18,7 @@ brew install --cask \
   keyboardcleantool \
   macs-fan-control megasync mendeley microsoft-auto-update microsoft-edge-dev microsoft-office \
   obs obs-virtualcam \
-  paragon-ntfs paw postgres \
+  paragon-ntfs paw postgres-unofficial \
   spectacle spotify steam \
   tandem \
   visual-studio-code vlc \
