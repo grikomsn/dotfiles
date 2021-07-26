@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+compaudit | xargs chmod g-w,o-w
 
 # install zsh-syntax-highlighting plugin
 echo "Installing zsh-syntax-highlighting..."

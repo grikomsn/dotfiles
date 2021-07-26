@@ -37,7 +37,6 @@ zsh -c "$(curl -fsSL https://df.griko.id/macos/extra.sh)"
 **Extra steps**
 
 - If `xcode-select --install` does not work, download manually at <https://developer.apple.com/download/more/?=xcode>
-- Run `compaudit | xargs chmod g-w,o-w` on an `oh-my-zsh`-enabled `zsh` session
 
 ## macOS (lite)
 
