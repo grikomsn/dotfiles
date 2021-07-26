@@ -37,6 +37,10 @@ source ~/.zshrc
 echo "Installing apps via app store..."
 mas install $MAS_IDS
 
+# install homebrew quicklook plugins (https://github.com/sindresorhus/quick-look-plugins)
+echo "Installing quicklook plugins via Homebrew..."
+brew install qlstephen qlimagesize
+
 # de-quarantine quicklook directory (https://github.com/sindresorhus/quick-look-plugins)
 echo "De-quarantining quicklook directory..."
 xattr -d -r com.apple.quarantine ~/Library/QuickLook

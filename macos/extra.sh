@@ -76,6 +76,10 @@ curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 echo "Installing Rust..."
 sh -c "$(curl -fsSL https://sh.rustup.rs)"
 
+# install homebrew quicklook plugins (https://github.com/sindresorhus/quick-look-plugins)
+echo "Installing quicklook plugins via Homebrew..."
+brew install qlstephen qlimagesize
+
 # de-quarantine quicklook directory (https://github.com/sindresorhus/quick-look-plugins)
 echo "De-quarantining quicklook directory..."
 xattr -d -r com.apple.quarantine ~/Library/QuickLook
