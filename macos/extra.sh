@@ -105,6 +105,11 @@ echo "Installing vim-plug for neovim..."
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
   --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# prep pip packages
+echo "Installing pip packages..."
+pip install --upgrade pip &&
+  pip install neovim virtualenv
+
 # prep virtualenv
 echo "Installing 'main' virtualenv..."
 mkdir -p ~/.virtualenvs && virtualenv ~/.virtualenvs/main
