@@ -88,7 +88,8 @@ xattr -d -r com.apple.quarantine ~/Library/QuickLook
 echo "Configuring git..."
 git config --global user.name "Griko Nibras" &&
   git config --global user.email "git@griko.id" &&
-  git config --global init.defaultBranch main
+  git config --global init.defaultBranch main &&
+  git config --global pull.rebase false
 
 # prep fnm
 echo "Installing Node.js LTS via fnm..."
