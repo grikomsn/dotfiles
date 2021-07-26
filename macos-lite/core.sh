@@ -7,7 +7,7 @@ xcode-select --install
 # install homebrew
 read -p "Press any key to install Homebrew..."
 echo "Installing Homebrew..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # install homebrew taps
 echo "Installing Homebrew casks..."
