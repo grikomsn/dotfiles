@@ -1,3 +1,5 @@
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
+
 # Custom path envs
 export POSTGRESAPP_INSTALL=/Applications/Postgres.app/Contents/Versions/latest
 export DENO_INSTALL=$HOME/.deno
@@ -52,6 +54,8 @@ export UPDATE_ZSH_DAYS=1
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
