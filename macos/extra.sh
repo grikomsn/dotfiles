@@ -40,6 +40,7 @@ local MAS_IDS=(
   1289583905 # Pixelmator Pro
   747648890  # Telegram
   425424353  # The Unarchiver
+  572281534  # Transloader
 )
 
 echo "Downloading .config files..."
