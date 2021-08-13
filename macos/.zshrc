@@ -121,7 +121,7 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Custom function to reinstall yarn global packages
-yarn_update_globals() {
+yarn-update-globals() {
   local YARN_GLOBAL_PACKAGES=(
     eslint
     graphql-language-service-cli
@@ -134,4 +134,9 @@ yarn_update_globals() {
     vercel
   )
   yarn global add $YARN_GLOBAL_PACKAGES
+}
+
+# Custom function to list dangling commits
+git-save-me() {
+  git log --graph --oneline --decorate $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 }
