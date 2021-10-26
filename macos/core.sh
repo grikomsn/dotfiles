@@ -25,7 +25,7 @@ echo "Installing essential apps via Homebrew..."
 local BREW_INSTALL_FORMULAS=(
   ag
   curl
-  doppler
+  dopplerhq/cli/doppler
   ffmpeg
   fzf
   gh
