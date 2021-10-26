@@ -1,3 +1,5 @@
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 

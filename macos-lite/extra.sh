@@ -21,9 +21,10 @@ local MAS_IDS=(
   1032155965 # Foxit PDF Reader
   1351639930 # Gifski
   412759995  # Guidance
-  539883307  # LINE
   1464122853 # NextDNS
   425424353  # The Unarchiver
+
+  # 539883307  # LINE
 )
 
 echo "Downloading .zshrc..."
