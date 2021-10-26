@@ -1,5 +1,13 @@
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
+
+# Temporary overrides
+export _PIP_LOCATIONS_NO_WARN_ON_MISMATCH=1
+
 # Custom path envs
 export POSTGRESAPP_INSTALL=/Applications/Postgres.app/Contents/Versions/latest
 export DENO_INSTALL=$HOME/.deno
@@ -120,6 +128,28 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
+# Custom function to run all update/upgrade commands
+brew-everything() {
+  brew update -vvv &&
+    brew upgrade -vvv &&
+    brew cleanup -vvv &&
+    brew doctor -vvv &&
+    omz update -vvv &&
+    deno upgrade &&
+    rustup upgrade
+}
+
+# Custom function to list dangling commits
+git-save-me() {
+  git log --graph --oneline --decorate $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
+}
+
+# Custom function to resolve codesigning issues with electron based apps
+patch-electrons() {
+  codesign --remove-signature /Applications/GitKraken.app/Contents/Frameworks/GitKraken\ Helper\ \(Renderer\).app
+  codesign -f -s - /Applications/Discord.app/Contents/Frameworks/Discord\ Helper\ \(Renderer\).app
+}
+
 # Custom function to reinstall yarn global packages
 yarn-update-globals() {
   local YARN_GLOBAL_PACKAGES=(
@@ -136,7 +166,7 @@ yarn-update-globals() {
   yarn global add $YARN_GLOBAL_PACKAGES
 }
 
-# Custom function to list dangling commits
-git-save-me() {
-  git log --graph --oneline --decorate $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
-}
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
