@@ -75,7 +75,7 @@ mas install $MAS_IDS
 
 # install deno
 echo "Installing Deno..."
-sh -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
+bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 
 # install fnm using automated script
 echo "Installing fnm..."
@@ -83,7 +83,7 @@ curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
 # install rustup
 echo "Installing Rust..."
-sh -c "$(curl -fsSL https://sh.rustup.rs)"
+bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
 # install homebrew quicklook plugins (https://github.com/sindresorhus/quick-look-plugins)
 echo "Installing quicklook plugins via Homebrew..."
