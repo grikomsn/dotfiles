@@ -106,7 +106,7 @@ fnm install --lts
 
 # prep npm and yarn
 echo "Installing npm, yarn, and various packages..."
-npm -g i npm yarn && yarn_update_globals
+npm -g i npm yarn && yarn-update-globals
 
 # prep neovim
 echo "Installing vim-plug for neovim..."
@@ -115,8 +115,8 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
 
 # prep pip packages
 echo "Installing pip packages..."
-pip install --upgrade pip &&
-  pip install neovim virtualenv watchdog
+pip3 install --upgrade pip &&
+  pip3 install neovim virtualenv watchdog
 
 # prep virtualenv
 echo "Installing 'main' virtualenv..."
