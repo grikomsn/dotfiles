@@ -7,7 +7,7 @@ xcode-select --install
 # install homebrew
 read -p "Press any key to install Homebrew..."
 echo "Installing Homebrew..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # install homebrew taps
 echo "Installing Homebrew casks..."
@@ -22,6 +22,6 @@ brew install mas zsh
 
 # install oh-my-zsh
 echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Done! ✨"
