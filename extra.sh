@@ -55,7 +55,6 @@ local BREW_CASK_INSTALL_FORMULAS=(
   logi-options-plus
   macs-fan-control
   microsoft-auto-update
-  microsoft-edge
   microsoft-office
   mullvadvpn
   obs
@@ -81,7 +80,6 @@ local MAS_IDS=(
   1569813296 # 1Password for Safari
   824171161  # Affinity Designer
   937984704  # Amphetamine
-  1319884285 # Black Out
   1287239339 # ColorSlurp
   1447043133 # Cursor Pro
   1503988785 # Entity Pro
@@ -91,7 +89,6 @@ local MAS_IDS=(
   920404675  # Monodraw
   1464122853 # NextDNS
   1289583905 # Pixelmator Pro
-  1519867270 # Refined GitHub
   899247664  # TestFlight
   425424353  # The Unarchiver
   1607635845 # Velja
