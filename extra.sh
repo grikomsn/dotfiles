@@ -32,6 +32,7 @@ echo "Loading .zshrc..." &&
 
 local BREW_CASK_INSTALL_FORMULAS=(
   1password
+  airbuddy
   bartender
   cleanmymac
   cleanshot
