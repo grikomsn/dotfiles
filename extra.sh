@@ -30,6 +30,9 @@ echo "Downloading .zshenv..." &&
 echo "Loading .zshrc..." &&
   source ~/.zshrc
 
+echo "Tapping additional Homebrew casks..." &&
+  brew tap dopplerhq/cli
+
 local BREW_CASK_INSTALL_FORMULAS=(
   1password
   airbuddy
@@ -40,6 +43,7 @@ local BREW_CASK_INSTALL_FORMULAS=(
   dbngin
   discord
   docker
+  dopplerhq/cli/doppler
   font-jetbrains-mono
   font-lexend
   fork

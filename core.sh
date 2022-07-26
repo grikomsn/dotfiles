@@ -20,7 +20,7 @@ read -p "Press any key to install Homebrew..."
 echo "Installing Homebrew..." &&
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Installing Homebrew casks..." &&
+echo "Tapping Homebrew casks..." &&
   brew tap homebrew/cask &&
   brew tap homebrew/cask-drivers &&
   brew tap homebrew/cask-fonts &&
@@ -32,7 +32,6 @@ local BREW_INSTALL_FORMULAS=(
   cmake
   coreutils
   curl
-  dopplerhq/cli/doppler
   ffmpeg
   findutils
   fnm
