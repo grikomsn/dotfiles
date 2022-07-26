@@ -57,7 +57,7 @@ local BREW_INSTALL_FORMULAS=(
 )
 echo "Installing essential apps via Homebrew..." &&
   brew reinstall $BREW_INSTALL_FORMULAS &&
-  brew install gnu-sed --with-default-names &&
+  brew install gnu-sed &&
   brew install wget --with-iri
 
 echo "Installing oh-my-zsh..." &&
