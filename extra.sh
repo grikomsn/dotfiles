@@ -8,6 +8,28 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
+echo "Downloading ~/.ssh/config..." &&
+  mkdir -p ~/.ssh &&
+  curl -fsSL https://df.griko.id/.ssh/config >~/.ssh/config
+
+echo "Downloading ~/.gitconfig..." &&
+  curl -fsSL https://df.griko.id/.gitconfig >~/.gitconfig
+
+echo "Downloading .profile..." &&
+  curl -fsSL https://df.griko.id/.profile >~/.profile
+
+echo "Downloading ~/.zprofile..." &&
+  curl -fsSL https://df.griko.id/.zprofile >~/.zprofile
+
+echo "Downloading .zshrc..." &&
+  curl -fsSL https://df.griko.id/.zshrc >~/.zshrc
+
+echo "Downloading .zshenv..." &&
+  curl -fsSL https://df.griko.id/.zshenv >~/.zshenv
+
+echo "Loading .zshrc..." &&
+  source ~/.zshrc
+
 local BREW_CASK_INSTALL_FORMULAS=(
   1password
   bartender
@@ -69,25 +91,6 @@ local MAS_IDS=(
 )
 echo "Installing apps via app store..." &&
   mas install $MAS_IDS
-
-echo "Downloading ~/.ssh/config..." &&
-  mkdir -p ~/.ssh &&
-  curl -fsSL https://df.griko.id/.ssh/config >~/.ssh/config
-
-echo "Downloading ~/.gitconfig..." &&
-  curl -fsSL https://df.griko.id/.gitconfig >~/.gitconfig
-
-echo "Downloading .profile..." &&
-  curl -fsSL https://df.griko.id/.profile >~/.profile
-
-echo "Downloading .zshrc..." &&
-  curl -fsSL https://df.griko.id/.zshrc >~/.zshrc
-
-echo "Downloading .zshenv..." &&
-  curl -fsSL https://df.griko.id/.zshenv >~/.zshenv
-
-echo "Loading .zshrc..." &&
-  source ~/.zshrc
 
 echo "Installing Deno..." &&
   bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
