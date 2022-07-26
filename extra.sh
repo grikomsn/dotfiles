@@ -49,6 +49,7 @@ local BREW_CASK_INSTALL_FORMULAS=(
   iterm2
   jetbrains-toolbox
   keyboardcleantool
+  logi-options-plus
   macs-fan-control
   microsoft-auto-update
   microsoft-edge
