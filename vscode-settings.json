@@ -1,0 +1,163 @@
+{
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma-insider"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "colorInfo.languages": [
+    { "colors": "css", "selector": "css" },
+    { "colors": "css", "selector": "js" },
+    { "colors": "css", "selector": "jsx" },
+    { "colors": "css", "selector": "less" },
+    { "colors": "css", "selector": "sass" },
+    { "colors": "css", "selector": "scss" },
+    { "colors": "css", "selector": "ts" },
+    { "colors": "css", "selector": "tsx" }
+  ],
+  "deno.enable": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true,
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "'Berkeley Mono', 'JetBrains Mono', Consolas, monospace",
+  "editor.fontLigatures": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.largeFileOptimizations": true,
+  "editor.lineHeight": 1.75,
+  "editor.linkedEditing": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "inline",
+  "editor.suggest.insertMode": "replace",
+  "editor.suggest.showStatusBar": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "keyword.control.flow",
+          "keyword.control.return",
+          "markup.bold markup.italic punctuation",
+          "markup.bold markup.italic",
+          "markup.italic punctuation",
+          "markup.italic",
+          "markup.quote",
+          "meta.directive.vue entity.other.attribute-name.html",
+          "meta.directive.vue punctuation.separator.key-value.html",
+          "meta.var.expr storage.type",
+          "punctuation.definition.italic",
+          "storage.modifier",
+          "tag.decorator.js entity.name.tag.js",
+          "tag.decorator.js punctuation.definition.tag.js",
+          ""
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "emmet.includeLanguages": {
+    "astro": "javascriptreact",
+    "javascript": "javascriptreact",
+    "markdown": "javascriptreact",
+    "rescript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": false,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.onIgnoredFiles": "warn",
+  "eslint.packageManager": "yarn",
+  "extensions.ignoreRecommendations": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.allowForcePush": true,
+  "git.allowNoVerifyCommit": true,
+  "git.alwaysShowStagedChangesResourceGroup": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableCommitSigning": true,
+  "git.showPushSuccessNotification": true,
+  "git.supportCancellation": true,
+  "git.useCommitInputAsStashMessage": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.slugifyMode": "github",
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.toolbarButtonForQuickPick": false,
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "npm.packageManager": "yarn",
+  "path-intellisense.showHiddenFiles": true,
+  "prettier.resolveGlobalModules": true,
+  "redhat.telemetry.enabled": false,
+  "search.quickOpen.includeSymbols": true,
+  "search.showLineNumbers": true,
+  "tailwindCSS.emmetCompletions": true,
+  "telemetry.telemetryLevel": "off",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.confirmOnExit": "always",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.enableBell": true,
+  "todo-tree.highlights.enabled": false,
+  "typescript.surveys.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "update.showReleaseNotes": false,
+  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "window.title": "${activeEditorLong}${separator}${rootName} ${dirty}",
+  "workbench.colorTheme": "Plastic - deprioritised punctuation",
+  "workbench.list.smoothScrolling": true,
+  "workbench.startupEditor": "readme",
+  "workbench.tree.indent": 18,
+  "workbench.view.alwaysShowHeaderActions": true
+}
