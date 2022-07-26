@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-compaudit | xargs chmod g-w,o-w
 
 sudo -v
 while true; do
