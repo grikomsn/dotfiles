@@ -12,9 +12,10 @@ export RUST_INSTALL=$HOME/.cargo
 # If you come from bash you might have to change your $PATH.
 export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$RUST_INSTALL/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.fnm:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
-export PATH=$HOME/.fnm:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
