@@ -120,6 +120,18 @@ echo "Installing 'main' virtualenv..."
 mkdir -p ~/.virtualenvs
 virtualenv ~/.virtualenvs/main
 
+echo "Setting up fzf..."
+/opt/homebrew/opt/fzf/install
+
+echo "Setting up git lfs..."
+sudo git lfs install --system
+
+echo "Setting up mkcert..."
+mkcert -install
+
+echo "Setting up openjdk..."
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
 eval "$(ssh-agent -s)"
 
 echo "Done! ✨"
