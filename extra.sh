@@ -15,7 +15,7 @@ echo "Downloading ~/.ssh/config..." &&
 echo "Downloading ~/.gitconfig..." &&
   curl -fsSL https://df.griko.id/.gitconfig >~/.gitconfig
 
-echo "Downloading .profile..." &&
+echo "Downloading ~/.profile..." &&
   curl -fsSL https://df.griko.id/.profile >~/.profile
 
 echo "Downloading ~/.zprofile..." &&
