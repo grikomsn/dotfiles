@@ -83,8 +83,9 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew common-aliases docker git last-working-dir pip rust sudo virtualenv zsh-syntax-highlighting)
+plugins=(brew common-aliases docker git last-working-dir pip rust sudo virtualenv)
 
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

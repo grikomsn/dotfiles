@@ -8,30 +8,30 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-echo "Downloading ~/.ssh/config..." &&
-  mkdir -p ~/.ssh &&
-  curl -fsSL https://df.griko.id/.ssh/config >~/.ssh/config
+echo "Downloading ~/.ssh/config..."
+mkdir -p ~/.ssh
+curl -fsSL https://df.griko.id/.ssh/config >~/.ssh/config
 
-echo "Downloading ~/.gitconfig..." &&
-  curl -fsSL https://df.griko.id/.gitconfig >~/.gitconfig
+echo "Downloading ~/.gitconfig..."
+curl -fsSL https://df.griko.id/.gitconfig >~/.gitconfig
 
-echo "Downloading ~/.profile..." &&
-  curl -fsSL https://df.griko.id/.profile >~/.profile
+echo "Downloading ~/.profile..."
+curl -fsSL https://df.griko.id/.profile >~/.profile
 
-echo "Downloading ~/.zprofile..." &&
-  curl -fsSL https://df.griko.id/.zprofile >~/.zprofile
+echo "Downloading ~/.zprofile..."
+curl -fsSL https://df.griko.id/.zprofile >~/.zprofile
 
-echo "Downloading .zshrc..." &&
-  curl -fsSL https://df.griko.id/.zshrc >~/.zshrc
+echo "Downloading .zshrc..."
+curl -fsSL https://df.griko.id/.zshrc >~/.zshrc
 
-echo "Downloading .zshenv..." &&
-  curl -fsSL https://df.griko.id/.zshenv >~/.zshenv
+echo "Downloading .zshenv..."
+curl -fsSL https://df.griko.id/.zshenv >~/.zshenv
 
-echo "Loading .zshrc..." &&
-  source ~/.zshrc
+echo "Loading .zshrc..."
+source ~/.zshrc
 
-echo "Tapping additional Homebrew casks..." &&
-  brew tap dopplerhq/cli
+echo "Tapping additional Homebrew casks..."
+brew tap dopplerhq/cli
 
 local BREW_CASK_INSTALL_FORMULAS=(
   1password
@@ -72,8 +72,10 @@ local BREW_CASK_INSTALL_FORMULAS=(
   webtorrent
   zoom
 )
-echo "Installing apps via Homebrew casks..." &&
-  brew reinstall --cask $BREW_CASK_INSTALL_FORMULAS
+echo "Installing apps via Homebrew casks..."
+for FORMULA in $BREW_CASK_INSTALL_FORMULAS; do
+  brew reinstall --cask $FORMULA
+done
 
 # mas list | sort -b -k2
 local MAS_IDS=(
@@ -95,30 +97,32 @@ local MAS_IDS=(
   425424353  # The Unarchiver
   1607635845 # Velja
 )
-echo "Installing apps via app store..." &&
-  mas install $MAS_IDS
+echo "Installing apps via app store..."
+for ID in $MAS_IDS; do
+  mas install $ID
+done
 
-echo "Installing Deno..." &&
-  bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
+echo "Installing Deno..."
+bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 
-echo "Installing Rust..." &&
-  bash -c "$(curl -fsSL https://sh.rustup.rs)"
+echo "Installing Rust..."
+bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
-echo "Installing Node.js runtimes via fnm..." &&
-  fnm install --lts &&
-  fnm alias 16.\* default
+echo "Installing Node.js runtimes via fnm..."
+fnm install --lts
+fnm alias 16.\* default
 
-echo "Installing npm, yarn, and various packages..." &&
-  npm -g i npm yarn &&
-  yarn-update-globals
+echo "Installing npm, yarn, and various packages..."
+npm -g i npm yarn
+yarn-update-globals
 
-echo "Installing pip packages..." &&
-  pip3 install --upgrade pip &&
-  pip3 install neovim virtualenv watchdog
+echo "Installing pip packages..."
+pip3 install --upgrade pip
+pip3 install neovim virtualenv watchdog
 
-echo "Installing 'main' virtualenv..." &&
-  mkdir -p ~/.virtualenvs &&
-  virtualenv ~/.virtualenvs/main
+echo "Installing 'main' virtualenv..."
+mkdir -p ~/.virtualenvs
+virtualenv ~/.virtualenvs/main
 
 eval "$(ssh-agent -s)"
 
