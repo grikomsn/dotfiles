@@ -41,6 +41,7 @@ local BREW_INSTALL_FORMULAS=(
   git
   git-lfs
   go
+  gnu-sed
   graphviz
   hub
   jq
@@ -53,13 +54,12 @@ local BREW_INSTALL_FORMULAS=(
   the_silver_searcher
   tree
   vim
+  wget
   zsh
   zsh-syntax-highlighting
 )
 echo "Installing essential apps via Homebrew..." &&
-  brew reinstall $BREW_INSTALL_FORMULAS &&
-  brew install gnu-sed &&
-  brew install wget --with-iri
+  brew reinstall $BREW_INSTALL_FORMULAS
 
 echo "Installing oh-my-zsh..." &&
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
