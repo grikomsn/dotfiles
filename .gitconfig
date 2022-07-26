@@ -1,0 +1,16 @@
+[commit]
+gpgSign = true
+
+[init]
+defaultBranch = main
+
+[pull]
+rebase = false
+
+[tag]
+forceSignAnnotated = true
+
+[user]
+name = Griko Nibras
+email = git@griko.id
+signingKey = 3D11832E91308C3A94DE1ED892A236769D1628D5

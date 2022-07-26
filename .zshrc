@@ -1,20 +1,16 @@
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
-
 # Temporary overrides
 export _PIP_LOCATIONS_NO_WARN_ON_MISMATCH=1
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # Custom path envs
-export POSTGRESAPP_INSTALL=/Applications/Postgres.app/Contents/Versions/latest
 export DENO_INSTALL=$HOME/.deno
+export OPENJDK_INSTALL=/usr/local/opt/openjdk
 export RUST_INSTALL=$HOME/.cargo
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$POSTGRESAPP_INSTALL/bin:$DENO_INSTALL/bin:$RUST_INSTALL/bin:$PATH
+export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$RUST_INSTALL/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.fnm:$PATH
 
@@ -87,7 +83,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew common-aliases docker git last-working-dir pip rust rustup sudo virtualenv zsh-syntax-highlighting)
+plugins=(brew common-aliases docker git last-working-dir pip rust sudo virtualenv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_ALL='en_US.UTF-8'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -130,13 +127,22 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Custom function to run all update/upgrade commands
 brew-everything() {
-  brew update -vvv &&
-    brew upgrade -vvv &&
-    brew cleanup -vvv &&
-    brew doctor -vvv &&
-    omz update -vvv &&
-    deno upgrade &&
-    rustup upgrade
+  brew update -vvv
+  brew upgrade -vvv
+  brew cleanup -vvv
+  brew doctor -vvv
+  omz update -vvv
+  deno upgrade
+  rustup upgrade
+}
+
+# Custom function to create a data url from a file
+dataurl() {
+  local mimeType=$(file -b --mime-type "$1")
+  if [[ $mimeType == text/* ]]; then
+    mimeType="${mimeType};charset=utf-8"
+  fi
+  echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
 # Custom function to list dangling commits
@@ -144,29 +150,24 @@ git-save-me() {
   git log --graph --oneline --decorate $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 }
 
-# Custom function to resolve codesigning issues with electron based apps
-patch-electrons() {
-  codesign --remove-signature /Applications/GitKraken.app/Contents/Frameworks/GitKraken\ Helper\ \(Renderer\).app
-  codesign -f -s - /Applications/Discord.app/Contents/Frameworks/Discord\ Helper\ \(Renderer\).app
+# Custom function to remove duplicate "Open with" entries
+dedupe-open-with-entries() {
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 }
 
 # Custom function to reinstall yarn global packages
 yarn-update-globals() {
+  npm -g i npm pnpm yarn
   local YARN_GLOBAL_PACKAGES=(
-    eslint
+    @cloudflare/wrangler
+    @vercel/ncc
     graphql-language-service-cli
-    lerna
     neovim
     node-jose-tools
-    prettier
+    quicktype
     serve
     speed-test
     vercel
   )
   yarn global add $YARN_GLOBAL_PACKAGES
 }
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####

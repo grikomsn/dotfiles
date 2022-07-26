@@ -1,18 +1,25 @@
 {
   "codeLens.enable": true,
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
+    "markdown": "javascriptreact",
+    "rescript": "javascriptreact"
   },
-  "eslint.autoFixOnSave": true,
+  "eslint.codeActionsOnSave.mode": "problems",
   "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.onIgnoredFiles": "warn",
   "eslint.packageManager": "yarn",
   "languageserver": {
     "graphql": {
-      "command": "graphql-lsp",
       "args": ["server", "-m", "stream"],
+      "command": "graphql-lsp",
       "filetypes": ["typescript", "typescriptreact", "graphql"]
     }
   },
   "npm.binPath": "yarn",
-  "typescript.referencesCodeLens.enable": false
+  "npm.packageManager": "yarn",
+  "typescript.referencesCodeLens.enable": false,
+  "typescript.surveys.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
