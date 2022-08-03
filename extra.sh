@@ -36,6 +36,18 @@ source ~/.zshrc
 echo "Tapping additional Homebrew casks..."
 brew tap dopplerhq/cli
 
+local BREW_EXTRA_INSTALL_FORMULAS=(
+  dopplerhq/cli/doppler
+)
+echo "Installing additional Homebrew formulas..."
+for FORMULA in $BREW_EXTRA_INSTALL_FORMULAS; do
+  if [[ "${PREFER_REINSTALL}" ]]; then
+    brew reinstall $FORMULA
+  else
+    brew install $FORMULA
+  fi
+done
+
 local BREW_CASK_INSTALL_FORMULAS=(
   1password
   airbuddy
@@ -46,7 +58,6 @@ local BREW_CASK_INSTALL_FORMULAS=(
   dbngin
   discord
   docker
-  dopplerhq/cli/doppler
   font-jetbrains-mono
   font-lexend
   fork
@@ -74,9 +85,13 @@ local BREW_CASK_INSTALL_FORMULAS=(
   webtorrent
   zoom
 )
-echo "Installing apps via Homebrew casks..."
+echo "Installing Homebrew casks..."
 for FORMULA in $BREW_CASK_INSTALL_FORMULAS; do
-  brew reinstall --cask $FORMULA
+  if [[ "${PREFER_REINSTALL}" ]]; then
+    brew reinstall --cask $FORMULA
+  else
+    brew install --cask $FORMULA
+  fi
 done
 
 # mas list | sort -b -k2
