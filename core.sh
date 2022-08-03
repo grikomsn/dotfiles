@@ -57,9 +57,13 @@ local BREW_INSTALL_FORMULAS=(
   zsh
   zsh-syntax-highlighting
 )
-echo "Installing essential apps via Homebrew..."
+echo "Installing essential Homebrew formulas..."
 for FORMULA in $BREW_INSTALL_FORMULAS; do
-  brew reinstall $FORMULA
+  if [[ "${PREFER_REINSTALL}" ]]; then
+    brew reinstall $FORMULA
+  else
+    brew install $FORMULA
+  fi
 done
 
 echo "Installing oh-my-zsh..."
