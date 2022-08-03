@@ -130,13 +130,13 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Custom function to run all update/upgrade commands
 brew-everything() {
+  deno upgrade
+  rustup upgrade
   brew update -vvv
   brew upgrade -vvv
   brew cleanup -vvv
   brew doctor -vvv
   omz update -vvv
-  deno upgrade
-  rustup upgrade
 }
 
 # Custom function to create a data url from a file
