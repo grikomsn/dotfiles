@@ -21,7 +21,7 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2>/dev/null
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2>/dev/null
 defaults write com.apple.finder AppleShowAllFiles -bool true
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
