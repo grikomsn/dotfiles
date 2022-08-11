@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+local DF_HOSTNAME="${DF_HOSTNAME:=df.griko.id}"
+
 sudo -v
 while true; do
   sudo -n true
@@ -32,7 +34,7 @@ local REMOTE_HOME_FILES=(
 )
 for REMOTE_FILE in $REMOTE_HOME_FILES; do
   echo "Downloading ~/$REMOTE_FILE ..."
-  curl -fsSL https://df.griko.id/$REMOTE_FILE >~/$REMOTE_FILE
+  curl -fsSL https://$DF_HOSTNAME/$REMOTE_FILE >~/$REMOTE_FILE
 done
 
 echo "Loading ~/.zshrc ..."
