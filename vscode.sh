@@ -35,6 +35,7 @@ local VSCODE_EXTENSIONS=(
   GitHub.github-vscode-theme
   golang.go
   GraphQL.vscode-graphql
+  GraphQL.vscode-graphql-syntax
   Gruntfuggly.todo-tree
   jock.svg
   marp-team.marp-vscode
