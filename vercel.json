@@ -4,11 +4,6 @@
   },
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://github.com/grikomsn/dotfiles",
-      "permanent": true
-    },
-    {
       "source": "/macos/:match*",
       "destination": "/:match*",
       "permanent": true
