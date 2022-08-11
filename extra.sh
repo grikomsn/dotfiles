@@ -11,24 +11,29 @@ echo "Downloading zsh-syntax-highlighting plugin..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-echo "Downloading ~/.ssh/config..."
-mkdir -p ~/.ssh
-curl -fsSL https://df.griko.id/.ssh/config >~/.ssh/config
+local MKDIR_PATHS=(
+  ~/.config/tabtab/zsh
+  ~/.ssh
+)
+echo "Creating required directories..."
+for MKDIR_PATH in $MKDIR_PATHS; do
+  mkdir -p $MKDIR_PATH
+done
 
-echo "Downloading ~/.gitconfig..."
-curl -fsSL https://df.griko.id/.gitconfig >~/.gitconfig
-
-echo "Downloading ~/.profile..."
-curl -fsSL https://df.griko.id/.profile >~/.profile
-
-echo "Downloading ~/.zprofile..."
-curl -fsSL https://df.griko.id/.zprofile >~/.zprofile
-
-echo "Downloading .zshrc..."
-curl -fsSL https://df.griko.id/.zshrc >~/.zshrc
-
-echo "Downloading .zshenv..."
-curl -fsSL https://df.griko.id/.zshenv >~/.zshenv
+local REMOTE_HOME_FILES=(
+  .config/tabtab/zsh/__tabtab.zsh
+  .config/tabtab/zsh/pnpm.zsh
+  .ssh/config
+  .gitconfig
+  .profile
+  .zprofile
+  .zshrc
+  .zshenv
+)
+for REMOTE_FILE in $REMOTE_HOME_FILES; do
+  echo "Downloading ~/$REMOTE_FILE..."
+  curl -fsSL https://df.griko.id/$REMOTE_FILE >~/$REMOTE_FILE
+done
 
 echo "Loading .zshrc..."
 source ~/.zshrc
