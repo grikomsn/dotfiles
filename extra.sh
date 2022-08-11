@@ -7,7 +7,7 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-echo "Downloading zsh-syntax-highlighting plugin..."
+echo "Downloading zsh-syntax-highlighting plugin ..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -15,8 +15,8 @@ local MKDIR_PATHS=(
   ~/.config/tabtab/zsh
   ~/.ssh
 )
-echo "Creating required directories..."
 for MKDIR_PATH in $MKDIR_PATHS; do
+  echo "Creating $MKDIR_PATH directory ..."
   mkdir -p $MKDIR_PATH
 done
 
@@ -31,20 +31,20 @@ local REMOTE_HOME_FILES=(
   .zshenv
 )
 for REMOTE_FILE in $REMOTE_HOME_FILES; do
-  echo "Downloading ~/$REMOTE_FILE..."
+  echo "Downloading ~/$REMOTE_FILE ..."
   curl -fsSL https://df.griko.id/$REMOTE_FILE >~/$REMOTE_FILE
 done
 
-echo "Loading .zshrc..."
+echo "Loading ~/.zshrc ..."
 source ~/.zshrc
 
-echo "Tapping additional Homebrew casks..."
+echo "Tapping additional Homebrew casks ..."
 brew tap dopplerhq/cli
 
 local BREW_EXTRA_INSTALL_FORMULAS=(
   dopplerhq/cli/doppler
 )
-echo "Installing additional Homebrew formulas..."
+echo "Installing additional Homebrew formulas ..."
 for FORMULA in $BREW_EXTRA_INSTALL_FORMULAS; do
   if [[ "${PREFER_REINSTALL}" ]]; then
     brew reinstall $FORMULA
@@ -90,7 +90,7 @@ local BREW_CASK_INSTALL_FORMULAS=(
   webtorrent
   zoom
 )
-echo "Installing Homebrew casks..."
+echo "Installing Homebrew casks ..."
 for FORMULA in $BREW_CASK_INSTALL_FORMULAS; do
   if [[ "${PREFER_REINSTALL}" ]]; then
     brew reinstall --cask $FORMULA
@@ -117,7 +117,7 @@ local MAS_IDS=(
   425424353  # The Unarchiver
   1607635845 # Velja
 )
-echo "Installing apps via app store..."
+echo "Installing apps via app store ..."
 for ID in $MAS_IDS; do
   mas install $ID
 done
@@ -128,32 +128,31 @@ bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 echo "Installing Rust..."
 bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
-echo "Installing Node.js runtimes via fnm..."
+echo "Installing Node.js runtimes via fnm ..."
 fnm install --lts
 fnm alias 16.\* default
 
-echo "Installing npm, yarn, and various packages..."
-npm -g i npm yarn
+echo "Installing npm, yarn, and various packages ..."
 yarn-update-globals
 
-echo "Installing pip packages..."
+echo "Installing pip packages ..."
 pip3 install --upgrade pip
 pip3 install neovim virtualenv watchdog
 
-echo "Installing 'main' virtualenv..."
+echo "Installing 'main' virtualenv ..."
 mkdir -p ~/.virtualenvs
 virtualenv ~/.virtualenvs/main
 
-echo "Setting up fzf..."
+echo "Setting up fzf ..."
 /opt/homebrew/opt/fzf/install
 
-echo "Setting up git lfs..."
+echo "Setting up git lfs ..."
 sudo git lfs install --system
 
-echo "Setting up mkcert..."
+echo "Setting up mkcert ..."
 mkcert -install
 
-echo "Setting up openjdk..."
+echo "Setting up openjdk ..."
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 eval "$(ssh-agent -s)"

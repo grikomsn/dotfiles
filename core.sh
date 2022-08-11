@@ -7,20 +7,20 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-echo "Creating Projects, Temporary, and Workspace directory in home..."
+echo "Creating Projects, Temporary, and Workspace directory in home ..."
 mkdir -p ~/{Projects,Temporary,Workspace}
 
-echo "Installing Xcode command line tools..."
+echo "Installing Xcode command line tools ..."
 xcode-select --install
 
-echo "Installing Rosetta..."
+echo "Installing Rosetta ..."
 softwareupdate --install-rosetta --agree-to-license
 
-read -p "Press any key to install Homebrew..."
-echo "Installing Homebrew..."
+read -p "Press any key to install Homebrew ..."
+echo "Installing Homebrew ..."
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Tapping Homebrew casks..."
+echo "Tapping Homebrew casks ..."
 brew tap homebrew/cask
 brew tap homebrew/cask-drivers
 brew tap homebrew/cask-fonts
@@ -57,7 +57,7 @@ local BREW_INSTALL_FORMULAS=(
   zsh
   zsh-syntax-highlighting
 )
-echo "Installing essential Homebrew formulas..."
+echo "Installing essential Homebrew formulas ..."
 for FORMULA in $BREW_INSTALL_FORMULAS; do
   if [[ "${PREFER_REINSTALL}" ]]; then
     brew reinstall $FORMULA
@@ -66,7 +66,7 @@ for FORMULA in $BREW_INSTALL_FORMULAS; do
   fi
 done
 
-echo "Installing oh-my-zsh..."
+echo "Installing oh-my-zsh ..."
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Done! ✨"
