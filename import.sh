@@ -7,5 +7,5 @@ local FILENAMES=(
   ~/.zshrc
 )
 for FILENAME in $FILENAMES; do
-  cp $FILENAME ~/
+  cp -a $FILENAME .
 done
