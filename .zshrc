@@ -178,6 +178,7 @@ node-update-globals() {
     neovim
     node-jose-tools
     quicktype
+    prettier
     serve
     speed-test
     vercel
