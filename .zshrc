@@ -167,9 +167,11 @@ dedupe-open-with-entries() {
 }
 
 # Custom function to reinstall yarn global packages
-yarn-update-globals() {
-  npm -g i npm pnpm yarn
-  local YARN_GLOBAL_PACKAGES=(
+node-update-globals() {
+  npm -g i npm corepack
+  corepack enable pnpm
+  corepack enable yarn
+  local NODE_GLOBAL_PACKAGES=(
     @cloudflare/wrangler
     @vercel/ncc
     graphql-language-service-cli
@@ -180,5 +182,5 @@ yarn-update-globals() {
     speed-test
     vercel
   )
-  yarn global add $YARN_GLOBAL_PACKAGES
+  pnpm --global add $NODE_GLOBAL_PACKAGES
 }

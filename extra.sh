@@ -133,7 +133,7 @@ fnm install --lts
 fnm alias 16.\* default
 
 echo "Installing npm, yarn, and various packages ..."
-yarn-update-globals
+node-update-globals
 
 echo "Installing pip packages ..."
 pip3 install --upgrade pip
