@@ -129,6 +129,9 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
+# Integration for pnpm
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
 # Custom function to run all update/upgrade commands
 brew-everything() {
   deno upgrade
