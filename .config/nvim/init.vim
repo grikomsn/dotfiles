@@ -23,7 +23,6 @@ Plug 'dsimidzija/vim-nerdtree-ignore'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " usabilty plugs
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
@@ -33,7 +32,6 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pantharshit00/vim-prisma'
 Plug 'tpope/vim-commentary'
-Plug 'wakatime/vim-wakatime'
 Plug 'wesQ3/vim-windowswap'
 
 call plug#end()
