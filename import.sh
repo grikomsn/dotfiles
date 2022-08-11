@@ -1,11 +1,17 @@
 #!/usr/bin/env zsh
 
-local FILENAMES=(
-  ~/.profile
-  ~/.zprofile
-  ~/.zshenv
-  ~/.zshrc
+local IMPORT_FILENAMES=(
+  .config/coc/extensions/package.json
+  .config/nvim/
+  .config/tabtab/
+  .profile
+  .zprofile
+  .zshenv
+  .zshrc
 )
-for FILENAME in $FILENAMES; do
-  cp -a $FILENAME .
+for FILENAME in $IMPORT_FILENAMES; do
+  echo "Importing ~/$FILENAME ..."
+  cp -Rp ~/$FILENAME ./$FILENAME
 done
+
+echo "Done! ✨"
