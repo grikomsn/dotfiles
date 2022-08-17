@@ -2,7 +2,6 @@
 
 local VSCODE_EXTENSIONS=(
   aaron-bond.better-comments
-  arcanis.vscode-zipfs
   artdiniz.quitcontrol-vscode
   astro-build.astro-vscode
   be5invis.toml
@@ -53,7 +52,6 @@ local VSCODE_EXTENSIONS=(
   piotrpalarz.vscode-gitignore-generator
   Prisma.prisma-insider
   pustelto.bracketeer
-  RandomFractalsInc.vscode-data-preview
   redhat.vscode-commons
   redhat.vscode-xml
   redhat.vscode-yaml

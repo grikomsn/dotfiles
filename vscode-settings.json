@@ -61,7 +61,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'Berkeley Mono', 'JetBrains Mono', Consolas, monospace",
+  "editor.fontFamily": "'Berkeley Mono', 'RobotoMono Nerd Font', 'Roboto Mono', Consolas, Monaco, monospace",
   "editor.fontLigatures": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -158,5 +158,6 @@
   "workbench.list.smoothScrolling": true,
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 18,
-  "workbench.view.alwaysShowHeaderActions": true
+  "workbench.view.alwaysShowHeaderActions": true,
+  "symbols.hidesExplorerArrows": false
 }
