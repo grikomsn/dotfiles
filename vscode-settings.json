@@ -61,7 +61,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'Berkeley Mono', 'RobotoMono Nerd Font', 'Roboto Mono', Consolas, Monaco, monospace",
+  "editor.fontFamily": "'Berkeley Mono', Consolas, Monaco, monospace",
   "editor.fontLigatures": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
