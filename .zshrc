@@ -171,6 +171,8 @@ node-update-globals() {
   npm -g i npm corepack
   corepack enable pnpm
   corepack enable yarn
+  corepack prepare --activate pnpm@latest
+  corepack prepare --activate yarn@latest
   local NODE_GLOBAL_PACKAGES=(
     @cloudflare/wrangler
     @vercel/ncc
