@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+# ./check-arch.sh
+ARCH_NAME="$(uname -m)"
+if [ "$(uname -m)" = "x86_64" ]; then
+  BREW_PREFIX="/usr/local"
+elif [ "${ARCH_NAME}" = "arm64" ]; then
+  BREW_PREFIX="/opt/homebrew"
+fi
+
 local DF_HOSTNAME="${DF_HOSTNAME:=df.griko.id}"
 
 sudo -v
@@ -146,7 +154,7 @@ mkdir -p ~/.virtualenvs
 virtualenv ~/.virtualenvs/main
 
 echo "Setting up fzf ..."
-/opt/homebrew/opt/fzf/install
+$BREW_PREFIX/opt/fzf/install
 
 echo "Setting up git lfs ..."
 sudo git lfs install --system
@@ -155,7 +163,7 @@ echo "Setting up mkcert ..."
 mkcert -install
 
 echo "Setting up openjdk ..."
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+sudo ln -sfn $BREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 eval "$(ssh-agent -s)"
 

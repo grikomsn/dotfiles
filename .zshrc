@@ -1,5 +1,13 @@
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
+# Local brew prefix check, see https://df.griko.id/check-arch.sh
+ARCH_NAME="$(uname -m)"
+if [ "$(uname -m)" = "x86_64" ]; then
+  BREW_PREFIX="/usr/local"
+elif [ "${ARCH_NAME}" = "arm64" ]; then
+  BREW_PREFIX="/opt/homebrew"
+fi
+
 # Temporary overrides
 export _PIP_LOCATIONS_NO_WARN_ON_MISMATCH=1
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
@@ -15,8 +23,8 @@ export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$PNPM_HOME:$RUST_INSTALL/bin:
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.fnm:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
-export PATH=/opt/homebrew/opt/curl/bin:$PATH
-export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
+export PATH=$BREW_PREFIX/opt/curl/bin:$PATH
+export PATH=$BREW_PREFIX/opt/openjdk/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
