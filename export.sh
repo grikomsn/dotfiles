@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-local EXPORT_FILENAMES=(
+EXPORT_FILENAMES=(
   .config/coc/extensions/package.json
   .config/nvim/
   .config/tabtab/

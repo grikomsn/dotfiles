@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-local VSCODE_EXTENSIONS=(
+VSCODE_EXTENSIONS=(
   aaron-bond.better-comments
   artdiniz.quitcontrol-vscode
   astro-build.astro-vscode

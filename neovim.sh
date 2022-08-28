@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-local DF_HOSTNAME="${DF_HOSTNAME:=df.griko.id}"
+DF_HOSTNAME="${DF_HOSTNAME:=df.griko.id}"
 
 echo "Downloading ~/.config/ files ..."
 mkdir -p ~/.config/{coc/extensions,nvim}

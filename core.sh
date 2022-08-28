@@ -27,7 +27,7 @@ brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap homebrew/services
 
-local BREW_INSTALL_FORMULAS=(
+BREW_INSTALL_FORMULAS=(
   bash
   cmake
   coreutils

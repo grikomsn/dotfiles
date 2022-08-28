@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-local IMPORT_FILENAMES=(
+IMPORT_FILENAMES=(
   .config/coc/extensions/package.json
   .config/nvim/
   .config/tabtab/

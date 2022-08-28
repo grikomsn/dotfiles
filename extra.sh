@@ -8,7 +8,7 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
 fi
 
-local DF_HOSTNAME="${DF_HOSTNAME:=df.griko.id}"
+DF_HOSTNAME="${DF_HOSTNAME:=df.griko.id}"
 
 sudo -v
 while true; do
@@ -21,7 +21,7 @@ echo "Downloading zsh-syntax-highlighting plugin ..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-local MKDIR_PATHS=(
+MKDIR_PATHS=(
   ~/.config/tabtab/zsh
   ~/.ssh
 )
@@ -30,7 +30,7 @@ for MKDIR_PATH in $MKDIR_PATHS; do
   mkdir -p $MKDIR_PATH
 done
 
-local REMOTE_HOME_FILES=(
+REMOTE_HOME_FILES=(
   .config/tabtab/zsh/__tabtab.zsh
   .config/tabtab/zsh/pnpm.zsh
   .ssh/config
@@ -51,7 +51,7 @@ source ~/.zshrc
 echo "Tapping additional Homebrew casks ..."
 brew tap dopplerhq/cli
 
-local BREW_EXTRA_INSTALL_FORMULAS=(
+BREW_EXTRA_INSTALL_FORMULAS=(
   dopplerhq/cli/doppler
 )
 echo "Installing additional Homebrew formulas ..."
@@ -63,7 +63,7 @@ for FORMULA in $BREW_EXTRA_INSTALL_FORMULAS; do
   fi
 done
 
-local BREW_CASK_INSTALL_FORMULAS=(
+BREW_CASK_INSTALL_FORMULAS=(
   1password
   airbuddy
   bartender
@@ -110,7 +110,7 @@ for FORMULA in $BREW_CASK_INSTALL_FORMULAS; do
 done
 
 # mas list | sort -b -k2
-local MAS_IDS=(
+MAS_IDS=(
   1569813296 # 1Password for Safari
   824171161  # Affinity Designer
   937984704  # Amphetamine
