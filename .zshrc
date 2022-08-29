@@ -12,6 +12,9 @@ fi
 export _PIP_LOCATIONS_NO_WARN_ON_MISMATCH=1
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
+# Custom golang envs
+export GOPATH=$HOME/.go
+
 # Custom path envs
 export DENO_INSTALL=$HOME/.deno
 export OPENJDK_INSTALL=/usr/local/opt/openjdk
@@ -19,6 +22,7 @@ export PNPM_HOME=$HOME/Library/pnpm
 export RUST_INSTALL=$HOME/.cargo
 
 # If you come from bash you might have to change your $PATH.
+export PATH=$GOPATH/bin:$PATH
 export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$PNPM_HOME:$RUST_INSTALL/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.fnm:$PATH

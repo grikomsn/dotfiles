@@ -6,11 +6,14 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
 fi
 
+export GOPATH=$HOME/.go
+
 export DENO_INSTALL=$HOME/.deno
 export OPENJDK_INSTALL=/usr/local/opt/openjdk
 export PNPM_HOME=$HOME/Library/pnpm
 export RUST_INSTALL=$HOME/.cargo
 
+export PATH=$GOPATH/bin:$PATH
 export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$PNPM_HOME:$RUST_INSTALL/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.fnm:$PATH
