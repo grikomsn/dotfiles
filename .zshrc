@@ -188,6 +188,7 @@ node-update-globals() {
   local NODE_GLOBAL_PACKAGES=(
     @cloudflare/wrangler
     @vercel/ncc
+    graphql
     graphql-language-service-cli
     neovim
     node-jose-tools
@@ -195,6 +196,7 @@ node-update-globals() {
     prettier
     serve
     speed-test
+    typescript
     vercel
   )
   pnpm --global add $NODE_GLOBAL_PACKAGES
