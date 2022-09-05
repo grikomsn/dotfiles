@@ -45,7 +45,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-let ayucolor="dark"
+let ayucolor="mirage"
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 colorscheme ayu
 
