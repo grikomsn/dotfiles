@@ -73,8 +73,7 @@ BREW_CASK_INSTALL_FORMULAS=(
   dbngin
   discord
   docker
-  font-jetbrains-mono
-  font-lexend
+  font-jetbrains-mono-nerd-font
   fork
   gitkraken
   gpg-suite-no-mail
@@ -84,14 +83,16 @@ BREW_CASK_INSTALL_FORMULAS=(
   keyboardcleantool
   logi-options-plus
   macs-fan-control
+  master-pdf-editor
   microsoft-auto-update
   microsoft-office
   mullvadvpn
   obs
-  obs-virtualcam
+  onyx
   paragon-ntfs
   raycast
   rectangle
+  sketch
   spotify
   steam
   tableplus
@@ -114,18 +115,25 @@ MAS_IDS=(
   1569813296 # 1Password for Safari
   824171161  # Affinity Designer
   937984704  # Amphetamine
+  611658502  # Boxy SVG
   1287239339 # ColorSlurp
   1447043133 # Cursor Pro
+  1470584107 # Dato
+  1355679052 # Dropover
   1503988785 # Entity Pro
+  1423210932 # Flow
+  1032155965 # Foxit PDF Reader
   1351639930 # Gifski
   412759995  # Guidance
   1294126402 # HEIC Converter
   920404675  # Monodraw
   1464122853 # NextDNS
+  409201541  # Pages
   1289583905 # Pixelmator Pro
   899247664  # TestFlight
   425424353  # The Unarchiver
   1607635845 # Velja
+  408981434  # iMovie
 )
 echo "Installing apps via app store ..."
 for ID in $MAS_IDS; do
