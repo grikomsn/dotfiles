@@ -17,14 +17,14 @@ export GOPATH=$HOME/.go
 
 # Custom path envs
 export DENO_INSTALL=$HOME/.deno
-export OPENJDK_INSTALL=/usr/local/opt/openjdk
+export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
 export PNPM_HOME=$HOME/Library/pnpm
 export RUST_INSTALL=$HOME/.cargo
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$GOPATH/bin:$PATH
 export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$PNPM_HOME:$RUST_INSTALL/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.fnm:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$BREW_PREFIX/opt/curl/bin:$PATH

@@ -3,7 +3,7 @@
 set encoding=utf8
 
 let mapleader="\<tab>"
-let g:python3_host_prog='/usr/local/bin/python3.9'
+let g:python3_host_prog='$BREW_PREFIX/bin/python3.9'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
