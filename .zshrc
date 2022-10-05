@@ -156,6 +156,7 @@ brew-everything() {
   brew upgrade -vvv
   brew cleanup -vvv
   brew doctor -vvv
+  brew autoremove -vvv
   omz update -vvv
 }
 
