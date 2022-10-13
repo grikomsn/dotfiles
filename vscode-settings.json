@@ -47,21 +47,11 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "colorInfo.languages": [
-    { "colors": "css", "selector": "css" },
-    { "colors": "css", "selector": "js" },
-    { "colors": "css", "selector": "jsx" },
-    { "colors": "css", "selector": "less" },
-    { "colors": "css", "selector": "sass" },
-    { "colors": "css", "selector": "scss" },
-    { "colors": "css", "selector": "ts" },
-    { "colors": "css", "selector": "tsx" }
-  ],
   "deno.enable": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'Berkeley Mono', Consolas, Monaco, monospace",
+  "editor.fontFamily": "'SF Mono', Consolas, Monaco, monospace",
   "editor.fontLigatures": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -77,37 +67,11 @@
   "editor.suggest.showStatusBar": true,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "keyword.control.flow",
-          "keyword.control.return",
-          "markup.bold markup.italic punctuation",
-          "markup.bold markup.italic",
-          "markup.italic punctuation",
-          "markup.italic",
-          "markup.quote",
-          "meta.directive.vue entity.other.attribute-name.html",
-          "meta.directive.vue punctuation.separator.key-value.html",
-          "meta.var.expr storage.type",
-          "punctuation.definition.italic",
-          "storage.modifier",
-          "tag.decorator.js entity.name.tag.js",
-          "tag.decorator.js punctuation.definition.tag.js",
-          ""
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
   "emmet.includeLanguages": {
-    "astro": "javascriptreact",
+    "astro": "html",
     "javascript": "javascriptreact",
     "markdown": "javascriptreact",
+    "mdx": "javascriptreact",
     "rescript": "javascriptreact"
   },
   "emmet.triggerExpansionOnTab": false,
@@ -117,6 +81,9 @@
   "eslint.onIgnoredFiles": "warn",
   "eslint.packageManager": "pnpm",
   "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "_redirects": "plaintext"
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -129,6 +96,9 @@
   "git.showPushSuccessNotification": true,
   "git.supportCancellation": true,
   "git.useCommitInputAsStashMessage": true,
+  "gitlens.graph.statusBar.enabled": false,
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdown.extension.toc.levels": "2..6",
@@ -141,6 +111,7 @@
   "redhat.telemetry.enabled": false,
   "search.quickOpen.includeSymbols": true,
   "search.showLineNumbers": true,
+  "symbols.hidesExplorerArrows": false,
   "tailwindCSS.emmetCompletions": true,
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "iTerm.app",
@@ -153,11 +124,12 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "window.commandCenter": true,
   "window.title": "${activeEditorLong}${separator}${rootName} ${dirty}",
-  "workbench.colorTheme": "Plastic - deprioritised punctuation",
+  "workbench.colorTheme": "Plastic",
+  "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 18,
-  "workbench.view.alwaysShowHeaderActions": true,
-  "symbols.hidesExplorerArrows": false
+  "workbench.view.alwaysShowHeaderActions": true
 }
