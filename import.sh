@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
 IMPORT_FILENAMES=(
-  .config/coc/extensions/package.json
-  .config/nvim/
   .config/tabtab/
   .profile
   .zprofile
