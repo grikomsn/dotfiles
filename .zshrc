@@ -12,21 +12,28 @@ fi
 export _PIP_LOCATIONS_NO_WARN_ON_MISMATCH=1
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
-# Custom golang envs
-export GOPATH=$HOME/.go
-
-# Custom path envs
-export DENO_INSTALL=$HOME/.deno
-export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
-export PNPM_HOME=$HOME/Library/pnpm
-export RUST_INSTALL=$HOME/.cargo
-
-# If you come from bash you might have to change your $PATH.
-export PATH=$GOPATH/bin:$PATH
-export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$PNPM_HOME:$RUST_INSTALL/bin:$PATH
+# Register custom paths
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+export DENO_INSTALL=$HOME/.deno
+export PATH=$DENO_INSTALL/bin:$PATH
+
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
+
+export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
+export PATH=$OPENJDK_INSTALL/bin:$PATH
+
+export PNPM_HOME=$HOME/Library/pnpm
+export PATH=$PNPM_HOME:$PATH
+
+export RUST_INSTALL=$HOME/.cargo
+export PATH=$RUST_INSTALL/bin:$PATH
+
 export PATH=$HOME/.fnm:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
+
 export PATH=$BREW_PREFIX/opt/curl/bin:$PATH
 export PATH=$BREW_PREFIX/opt/openjdk/bin:$PATH
 

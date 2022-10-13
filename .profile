@@ -6,19 +6,28 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
 fi
 
-export GOPATH=$HOME/.go
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 export DENO_INSTALL=$HOME/.deno
-export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
-export PNPM_HOME=$HOME/Library/pnpm
-export RUST_INSTALL=$HOME/.cargo
+export PATH=$DENO_INSTALL/bin:$PATH
 
+export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
-export PATH=$DENO_INSTALL/bin:$OPENJDK_INSTALL/bin:$PNPM_HOME:$RUST_INSTALL/bin:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
+export PATH=$OPENJDK_INSTALL/bin:$PATH
+
+export PNPM_HOME=$HOME/Library/pnpm
+export PATH=$PNPM_HOME:$PATH
+
+export RUST_INSTALL=$HOME/.cargo
+export PATH=$RUST_INSTALL/bin:$PATH
+
 export PATH=$HOME/.fnm:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
-export PATH=$ARCH_NAME/opt/curl/bin:$PATH
-export PATH=$ARCH_NAME/opt/openjdk/bin:$PATH
+
+export PATH=$BREW_PREFIX/opt/curl/bin:$PATH
+export PATH=$BREW_PREFIX/opt/openjdk/bin:$PATH
 
 . "$HOME/.cargo/env"
