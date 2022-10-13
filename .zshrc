@@ -1,6 +1,6 @@
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
-# Local brew prefix check, see https://df.griko.id/check-arch.sh
+# Local brew prefix check, see https://dotfiles.griko.id/check-arch.sh
 ARCH_NAME="$(uname -m)"
 if [ "$(uname -m)" = "x86_64" ]; then
   BREW_PREFIX="/usr/local"

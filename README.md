@@ -5,23 +5,23 @@ Dotfiles for my workstations when I'm having a bad day (read: reinstalling from 
 ## Install scripts
 
 ```sh
-sh -c "$(curl -fsSL https://df.griko.id/sysprefs.sh)"
+sh -c "$(curl -fsSL https://dotfiles.griko.id/sysprefs.sh)"
 ```
 
 ```sh
-sh -c "$(curl -fsSL https://df.griko.id/core.sh)"
+sh -c "$(curl -fsSL https://dotfiles.griko.id/core.sh)"
 ```
 
 ```sh
-zsh -c "$(curl -fsSL https://df.griko.id/extra.sh)"
+zsh -c "$(curl -fsSL https://dotfiles.griko.id/extra.sh)"
 ```
 
 ```sh
-zsh -c "$(curl -fsSL https://df.griko.id/neovim.sh)"
+zsh -c "$(curl -fsSL https://dotfiles.griko.id/neovim.sh)"
 ```
 
 ```sh
-zsh -c "$(curl -fsSL https://df.griko.id/vscode.sh)"
+zsh -c "$(curl -fsSL https://dotfiles.griko.id/vscode.sh)"
 ```
 
 ## Alternative hostnames
@@ -35,7 +35,7 @@ sh -c "$(curl -fsSL https://df2.griko.id/check-hostname.sh)"
 
 Available hostnames:
 
-- `df.griko.id`
+- `dotfiles.griko.id`
 - `df1.griko.id`
 - `df2.griko.id`
 
