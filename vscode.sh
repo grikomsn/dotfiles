@@ -15,6 +15,7 @@ VSCODE_EXTENSIONS=(
   bierner.markdown-mermaid
   bierner.markdown-preview-github-styles
   bierner.markdown-yaml-preamble
+  boyswan.glsl-literal
   bradlc.vscode-tailwindcss
   chenglou92.rescript-vscode
   christian-kohler.path-intellisense
@@ -31,24 +32,26 @@ VSCODE_EXTENSIONS=(
   esbenp.prettier-vscode
   foxundermoon.shell-format
   GitHub.codespaces
+  GitHub.copilot
   GitHub.github-vscode-theme
   golang.go
   GraphQL.vscode-graphql
+  GraphQL.vscode-graphql-execution
   GraphQL.vscode-graphql-syntax
-  Gruntfuggly.todo-tree
   jock.svg
-  marp-team.marp-vscode
+  johnsoncodehk.vscode-tsconfig-helper
   mikestead.dotenv
   ms-azuretools.vscode-docker
   ms-python.python
   ms-python.vscode-pylance
-  ms-vscode-remote.remote-containers
   ms-vscode-remote.remote-ssh
   ms-vscode-remote.remote-ssh-edit
-  ms-vscode-remote.remote-wsl
+  ms-vscode.cmake-tools
+  ms-vscode.cpptools
   ms-vscode.makefile-tools
   ms-vsliveshare.vsliveshare
   naumovs.color-highlight
+  Orta.vscode-twoslash-queries
   piotrpalarz.vscode-gitignore-generator
   Prisma.prisma-insider
   pustelto.bracketeer
@@ -57,9 +60,13 @@ VSCODE_EXTENSIONS=(
   redhat.vscode-yaml
   richie5um2.vscode-sort-json
   sburg.vscode-javascript-booster
+  slevesque.shader
   teabyii.ayu
   tldraw-org.tldraw-vscode
   tombonnike.vscode-status-bar-format-toggle
+  twxs.cmake
+  unifiedjs.vscode-mdx
+  usernamehw.errorlens
   VisualStudioExptTeam.vscodeintellicode
   WallabyJs.quokka-vscode
   will-stone.plastic
