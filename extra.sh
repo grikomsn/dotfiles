@@ -82,6 +82,7 @@ BREW_CASK_INSTALL_FORMULAS=(
   jetbrains-toolbox
   keyboardcleantool
   logi-options-plus
+  loopback
   macs-fan-control
   master-pdf-editor
   microsoft-auto-update
@@ -90,15 +91,17 @@ BREW_CASK_INSTALL_FORMULAS=(
   obs
   onyx
   paragon-ntfs
+  pixelsnap
   raycast
   rectangle
-  sketch
+  slack
   spotify
   steam
   tableplus
   visual-studio-code
   vlc
   webtorrent
+  whatsapp
   zoom
 )
 echo "Installing Homebrew casks ..."
@@ -124,12 +127,14 @@ MAS_IDS=(
   1423210932 # Flow
   1032155965 # Foxit PDF Reader
   1351639930 # Gifski
-  412759995  # Guidance
   1294126402 # HEIC Converter
   920404675  # Monodraw
   1464122853 # NextDNS
   409201541  # Pages
   1289583905 # Pixelmator Pro
+  1596706466 # Speediness
+  1475387142 # Tailscale
+  747648890  # Telegram
   899247664  # TestFlight
   425424353  # The Unarchiver
   1607635845 # Velja
