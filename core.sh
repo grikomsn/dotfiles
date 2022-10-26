@@ -13,8 +13,11 @@ mkdir -p ~/{Projects,Temporary,Workspace}
 echo "Installing Xcode command line tools ..."
 xcode-select --install
 
-echo "Installing Rosetta ..."
-softwareupdate --install-rosetta --agree-to-license
+# ./check-arch.sh
+if [ "$(uname -m)" = "arm64" ]; then
+  echo "Installing Rosetta ..."
+  softwareupdate --install-rosetta --agree-to-license
+fi
 
 read -p "Press any key to install Homebrew ..."
 echo "Installing Homebrew ..."

@@ -1,6 +1,6 @@
 # ./check-arch.sh
 ARCH_NAME="$(uname -m)"
-if [ "$(uname -m)" = "x86_64" ]; then
+if [ "${ARCH_NAME}" = "x86_64" ]; then
   BREW_PREFIX="/usr/local"
 elif [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
