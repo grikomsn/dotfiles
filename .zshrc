@@ -154,8 +154,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # Custom function to run all update/upgrade commands
 brew-everything() {
   deno upgrade
-  fnm install --lts &&
-    fnm alias 16.\* default
+  fnm install 16 &&
+    fnm alias 16 default
   pip3 install --upgrade pip &&
     pip3 install neovim virtualenv watchdog
   rustup upgrade
