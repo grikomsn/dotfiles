@@ -151,10 +151,11 @@ bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
 echo "Installing Node.js runtimes via fnm ..."
 fnm install --lts
-fnm alias 16.\* default
+fnm install 16
+fnm alias 16 default
 
-echo "Installing npm, yarn, and various packages ..."
-node-update-globals
+# echo "Installing npm, yarn, and various packages ..."
+# node-update-globals
 
 echo "Installing pip packages ..."
 pip3 install --upgrade pip
