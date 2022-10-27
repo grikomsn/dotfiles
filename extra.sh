@@ -121,10 +121,8 @@ MAS_IDS=(
   611658502  # Boxy SVG
   1287239339 # ColorSlurp
   1447043133 # Cursor Pro
-  1470584107 # Dato
   1355679052 # Dropover
   1503988785 # Entity Pro
-  1423210932 # Flow
   1032155965 # Foxit PDF Reader
   1351639930 # Gifski
   1294126402 # HEIC Converter
