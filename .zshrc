@@ -154,7 +154,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # Custom function to run all update/upgrade commands
 brew-everything() {
   deno upgrade
-  fnm install 16 &&
+  fnm install --lts &&
+    fnm install 16 &&
     fnm alias 16 default
   pip3 install --upgrade pip &&
     pip3 install neovim virtualenv watchdog
@@ -188,7 +189,7 @@ dedupe-open-with-entries() {
 
 # Custom function to reinstall yarn global packages
 node-update-globals() {
-  npm -g i npm corepack
+  # npm -g i npm corepack
   corepack enable pnpm
   corepack enable yarn
   corepack prepare --activate pnpm@latest
