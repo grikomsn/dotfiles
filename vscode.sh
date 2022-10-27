@@ -2,9 +2,9 @@
 
 VSCODE_EXTENSIONS=(
   aaron-bond.better-comments
+  alexandernanberg.horizon-theme-vscode
   artdiniz.quitcontrol-vscode
   astro-build.astro-vscode
-  be5invis.toml
   bierner.comment-tagged-templates
   bierner.emojisense
   bierner.folder-source-actions
@@ -15,8 +15,8 @@ VSCODE_EXTENSIONS=(
   bierner.markdown-mermaid
   bierner.markdown-preview-github-styles
   bierner.markdown-yaml-preamble
-  boyswan.glsl-literal
   bradlc.vscode-tailwindcss
+  bungcip.better-toml
   chenglou92.rescript-vscode
   christian-kohler.path-intellisense
   codezombiech.gitignore
@@ -39,7 +39,6 @@ VSCODE_EXTENSIONS=(
   GraphQL.vscode-graphql-execution
   GraphQL.vscode-graphql-syntax
   jock.svg
-  johnsoncodehk.vscode-tsconfig-helper
   mikestead.dotenv
   ms-azuretools.vscode-docker
   ms-python.python
@@ -52,17 +51,15 @@ VSCODE_EXTENSIONS=(
   ms-vsliveshare.vsliveshare
   naumovs.color-highlight
   Orta.vscode-twoslash-queries
-  piotrpalarz.vscode-gitignore-generator
-  Prisma.prisma-insider
+  Prisma.prisma
   pustelto.bracketeer
   redhat.vscode-commons
   redhat.vscode-xml
   redhat.vscode-yaml
   richie5um2.vscode-sort-json
+  rust-lang.rust-analyzer
   sburg.vscode-javascript-booster
-  slevesque.shader
   teabyii.ayu
-  tldraw-org.tldraw-vscode
   tombonnike.vscode-status-bar-format-toggle
   twxs.cmake
   unifiedjs.vscode-mdx
