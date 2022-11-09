@@ -5,39 +5,24 @@ Dotfiles for my workstations when I'm having a bad day (read: reinstalling from 
 ## Install scripts
 
 ```sh
-sh -c "$(curl -fsSL https://dotfiles.griko.id/sysprefs.sh)"
+sh -c "$(curl -fsSL https://dotfiles.nibras.co/sysprefs.sh)"
 ```
 
 ```sh
-sh -c "$(curl -fsSL https://dotfiles.griko.id/core.sh)"
+sh -c "$(curl -fsSL https://dotfiles.nibras.co/core.sh)"
 ```
 
 ```sh
-zsh -c "$(curl -fsSL https://dotfiles.griko.id/extra.sh)"
+zsh -c "$(curl -fsSL https://dotfiles.nibras.co/extra.sh)"
 ```
 
 ```sh
-zsh -c "$(curl -fsSL https://dotfiles.griko.id/neovim.sh)"
+zsh -c "$(curl -fsSL https://dotfiles.nibras.co/neovim.sh)"
 ```
 
 ```sh
-zsh -c "$(curl -fsSL https://dotfiles.griko.id/vscode.sh)"
+zsh -c "$(curl -fsSL https://dotfiles.nibras.co/vscode.sh)"
 ```
-
-## Alternative hostnames
-
-Dotfils are mirrored on all hostnames below. Override the `DF_HOSTNAME` variable to change the script internal downloads. Example usage:
-
-```sh
-export DF_HOSTNAME=df2.griko.id
-sh -c "$(curl -fsSL https://df2.griko.id/check-hostname.sh)"
-```
-
-Available hostnames:
-
-- `dotfiles.griko.id`
-- `df1.griko.id`
-- `df2.griko.id`
 
 ## Extra steps
 

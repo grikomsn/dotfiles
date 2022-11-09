@@ -12,5 +12,5 @@ forceSignAnnotated = true
 
 [user]
 name = Griko Nibras
-email = git@griko.id
-signingKey = 3D11832E91308C3A94DE1ED892A236769D1628D5
+email = griko@nibras.co
+signingKey = E6D097D3DA7C838FCEAF16631BA6B0E9E807B356

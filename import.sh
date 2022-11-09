@@ -2,6 +2,7 @@
 
 IMPORT_FILENAMES=(
   .config/tabtab/
+  .gitconfig
   .profile
   .zprofile
   .zshenv

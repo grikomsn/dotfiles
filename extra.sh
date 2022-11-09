@@ -8,7 +8,7 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
 fi
 
-DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.griko.id}"
+DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.nibras.co}"
 
 sudo -v
 while true; do
