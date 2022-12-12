@@ -30,7 +30,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma-insider"
+    "editor.defaultFormatter": "Prisma.prisma"
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
@@ -45,7 +45,7 @@
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "deno.enable": false,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -97,7 +97,10 @@
   "git.supportCancellation": true,
   "git.useCommitInputAsStashMessage": true,
   "github.copilot.enable": {
-    "*": false
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
   },
   "gitlens.graph.statusBar.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
@@ -106,15 +109,13 @@
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdown.extension.toc.levels": "2..6",
   "markdown.extension.toc.slugifyMode": "github",
-  "markdown.marp.enableHtml": true,
-  "markdown.marp.toolbarButtonForQuickPick": false,
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "npm.packageManager": "pnpm",
   "path-intellisense.showHiddenFiles": true,
+  "reactSnippets.settings.importReactOnTop": false,
   "redhat.telemetry.enabled": false,
   "search.quickOpen.includeSymbols": true,
   "search.showLineNumbers": true,
-  "symbols.hidesExplorerArrows": false,
   "tailwindCSS.emmetCompletions": true,
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "iTerm.app",
@@ -122,16 +123,17 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.enableBell": true,
-  "todo-tree.highlights.enabled": false,
   "typescript.surveys.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
   "window.commandCenter": true,
-  "window.title": "${activeEditorLong}${separator}${rootName} ${dirty}",
-  "workbench.colorTheme": "Plastic",
+  "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "icons-carbon",
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 18,
   "workbench.view.alwaysShowHeaderActions": true

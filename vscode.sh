@@ -2,11 +2,10 @@
 
 VSCODE_EXTENSIONS=(
   aaron-bond.better-comments
-  alexandernanberg.horizon-theme-vscode
+  antfu.icons-carbon
   artdiniz.quitcontrol-vscode
   astro-build.astro-vscode
   bierner.comment-tagged-templates
-  bierner.emojisense
   bierner.folder-source-actions
   bierner.github-markdown-preview
   bierner.markdown-checkbox
@@ -27,6 +26,7 @@ VSCODE_EXTENSIONS=(
   Divlo.vscode-styled-jsx-languageserver
   Divlo.vscode-styled-jsx-syntax
   drKnoxy.eslint-disable-snippets
+  dsznajder.es7-react-js-snippets
   eamodio.gitlens
   EditorConfig.EditorConfig
   esbenp.prettier-vscode
@@ -40,7 +40,9 @@ VSCODE_EXTENSIONS=(
   GraphQL.vscode-graphql-syntax
   jock.svg
   mikestead.dotenv
+  monokai.theme-monokai-pro-vscode
   ms-azuretools.vscode-docker
+  ms-python.isort
   ms-python.python
   ms-python.vscode-pylance
   ms-vscode-remote.remote-ssh
@@ -48,9 +50,9 @@ VSCODE_EXTENSIONS=(
   ms-vscode.cmake-tools
   ms-vscode.cpptools
   ms-vscode.makefile-tools
+  ms-vscode.remote-explorer
   ms-vsliveshare.vsliveshare
   naumovs.color-highlight
-  Orta.vscode-twoslash-queries
   Prisma.prisma
   pustelto.bracketeer
   redhat.vscode-commons
@@ -59,8 +61,6 @@ VSCODE_EXTENSIONS=(
   richie5um2.vscode-sort-json
   rust-lang.rust-analyzer
   sburg.vscode-javascript-booster
-  teabyii.ayu
-  tombonnike.vscode-status-bar-format-toggle
   twxs.cmake
   unifiedjs.vscode-mdx
   usernamehw.errorlens
@@ -69,6 +69,7 @@ VSCODE_EXTENSIONS=(
   will-stone.plastic
   wmaurer.change-case
   yzhang.markdown-all-in-one
+  zachhardesty.convert-object-to-jsx-vscode
 )
 echo "Installing vscode extensions..." &&
   for EXTENSION in $VSCODE_EXTENSIONS; do
