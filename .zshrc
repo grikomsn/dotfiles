@@ -210,3 +210,9 @@ node-update-globals() {
   )
   pnpm --global add $NODE_GLOBAL_PACKAGES
 }
+
+# Custom function to reset launchpad layout
+reset-launchpad() {
+  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+}
+
