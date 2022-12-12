@@ -8,7 +8,7 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
 fi
 
-DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.nibras.co}"
+DF_HOSTNAME="${DF_HOSTNAME:=dotfiles-git-codingki-grikomsn.vercel.app}"
 
 sudo -v
 while true; do
@@ -48,59 +48,27 @@ done
 echo "Loading ~/.zshrc ..."
 source ~/.zshrc
 
-echo "Tapping additional Homebrew casks ..."
-brew tap dopplerhq/cli
-
-BREW_EXTRA_INSTALL_FORMULAS=(
-  dopplerhq/cli/doppler
-)
-echo "Installing additional Homebrew formulas ..."
-for FORMULA in $BREW_EXTRA_INSTALL_FORMULAS; do
-  if [[ "${PREFER_REINSTALL}" ]]; then
-    brew reinstall $FORMULA
-  else
-    brew install $FORMULA
-  fi
-done
-
 BREW_CASK_INSTALL_FORMULAS=(
-  1password
   airbuddy
-  bartender
   cleanmymac
   cleanshot
-  cyberduck
-  dbngin
   discord
   docker
   font-jetbrains-mono-nerd-font
-  fork
-  gitkraken
-  gpg-suite-no-mail
   imageoptim
   iterm2
-  jetbrains-toolbox
   keyboardcleantool
   logi-options-plus
-  loopback
-  macs-fan-control
-  master-pdf-editor
   microsoft-auto-update
   microsoft-office
   mullvadvpn
   obs
-  onyx
-  paragon-ntfs
-  pixelsnap
   raycast
   rectangle
   slack
   spotify
-  steam
-  tableplus
   visual-studio-code
   vlc
-  webtorrent
   whatsapp
   zoom
 )
@@ -115,25 +83,9 @@ done
 
 # mas list | sort -b -k2
 MAS_IDS=(
-  1569813296 # 1Password for Safari
-  824171161  # Affinity Designer
   937984704  # Amphetamine
-  611658502  # Boxy SVG
-  1287239339 # ColorSlurp
-  1447043133 # Cursor Pro
   1355679052 # Dropover
-  1503988785 # Entity Pro
-  1032155965 # Foxit PDF Reader
-  1351639930 # Gifski
-  1294126402 # HEIC Converter
-  920404675  # Monodraw
-  1464122853 # NextDNS
-  409201541  # Pages
-  1289583905 # Pixelmator Pro
-  1596706466 # Speediness
-  1475387142 # Tailscale
   747648890  # Telegram
-  899247664  # TestFlight
   425424353  # The Unarchiver
   1607635845 # Velja
   408981434  # iMovie
@@ -142,9 +94,6 @@ echo "Installing apps via app store ..."
 for ID in $MAS_IDS; do
   mas install $ID
 done
-
-echo "Installing Deno..."
-bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 
 echo "Installing Rust..."
 bash -c "$(curl -fsSL https://sh.rustup.rs)"
@@ -159,7 +108,7 @@ fnm alias 16 default
 
 echo "Installing pip packages ..."
 pip3 install --upgrade pip
-pip3 install neovim virtualenv watchdog
+pip3 install virtualenv watchdog
 
 echo "Installing 'main' virtualenv ..."
 mkdir -p ~/.virtualenvs

@@ -1,19 +1,9 @@
-[commit]
-gpgSign = true
-
-[gpg]
-program = gpg
-
 [init]
 defaultBranch = main
 
 [pull]
 rebase = false
 
-[tag]
-forceSignAnnotated = true
-
 [user]
-name = Griko Nibras
-email = griko@nibras.co
-signingKey = E6D097D3DA7C838FCEAF16631BA6B0E9E807B356
+name = Nur Fikri
+email = codingki@gmail.com

@@ -49,7 +49,6 @@ BREW_INSTALL_FORMULAS=(
   jq
   mas
   mkcert
-  neovim
   openjdk
   python
   sqlite
