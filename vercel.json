@@ -7,6 +7,11 @@
       "source": "/macos/:match*",
       "destination": "/:match*",
       "permanent": true
+    },
+    {
+      "source": "/zip",
+      "destination": "https://github.com/grikomsn/dotfiles/archive/refs/heads/main.zip",
+      "permanent": false
     }
   ]
 }
