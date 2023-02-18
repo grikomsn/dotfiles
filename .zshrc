@@ -30,6 +30,9 @@ export PATH=$PNPM_HOME:$PATH
 export RUST_INSTALL=$HOME/.cargo
 export PATH=$RUST_INSTALL/bin:$PATH
 
+export TOOLBOX_INSTALL="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH=$TOOLBOX_INSTALL:$PATH
+
 export PATH=$HOME/.fnm:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
@@ -44,7 +47,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="lambda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -195,13 +198,10 @@ node-update-globals() {
   corepack prepare --activate pnpm@latest
   corepack prepare --activate yarn@1.22.19
   local NODE_GLOBAL_PACKAGES=(
-    @cloudflare/wrangler
-    @vercel/ncc
     graphql
     graphql-language-service-cli
     neovim
     node-jose-tools
-    quicktype
     prettier
     serve
     speed-test
@@ -213,6 +213,6 @@ node-update-globals() {
 
 # Custom function to reset launchpad layout
 reset-launchpad() {
-  defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+  defaults write com.apple.dock ResetLaunchPad -bool true
+  killall Dock
 }
-
