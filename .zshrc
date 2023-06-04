@@ -109,7 +109,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew common-aliases docker git last-working-dir pip rust sudo virtualenv zsh-syntax-highlighting)
+plugins=(brew common-aliases docker git last-working-dir pip rust sudo zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -151,17 +151,12 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-# Integration for pnpm
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
 # Custom function to run all update/upgrade commands
 brew-everything() {
   deno upgrade
-  fnm install --lts &&
-    fnm install 16 &&
-    fnm alias 16 default
+  fnm install --lts
   pip3 install --upgrade pip &&
-    pip3 install neovim virtualenv watchdog
+    pip3 install neovim watchdog
   rustup upgrade
   brew update -vvv
   brew upgrade -vvv
@@ -198,6 +193,7 @@ node-update-globals() {
   corepack prepare --activate pnpm@latest
   corepack prepare --activate yarn@1.22.19
   local NODE_GLOBAL_PACKAGES=(
+    @vercel/ncc
     graphql
     graphql-language-service-cli
     neovim
@@ -205,7 +201,6 @@ node-update-globals() {
     prettier
     serve
     speed-test
-    typescript
     vercel
   )
   pnpm --global add $NODE_GLOBAL_PACKAGES

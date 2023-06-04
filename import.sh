@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 IMPORT_FILENAMES=(
-  .config/tabtab/
   .gitconfig
   .profile
   .zprofile

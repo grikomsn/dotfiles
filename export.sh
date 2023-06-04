@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 EXPORT_FILENAMES=(
-  .config/tabtab/
   .gitconfig
   .profile
   .zprofile

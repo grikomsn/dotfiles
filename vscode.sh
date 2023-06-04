@@ -3,6 +3,7 @@
 VSCODE_EXTENSIONS=(
   aaron-bond.better-comments
   antfu.icons-carbon
+  antfu.open-in-github-button
   artdiniz.quitcontrol-vscode
   astro-build.astro-vscode
   bierner.comment-tagged-templates
@@ -15,34 +16,34 @@ VSCODE_EXTENSIONS=(
   bierner.markdown-preview-github-styles
   bierner.markdown-yaml-preamble
   bradlc.vscode-tailwindcss
-  bungcip.better-toml
+  bufbuild.vscode-buf
   chenglou92.rescript-vscode
   christian-kohler.path-intellisense
   codezombiech.gitignore
+  cvbenur.ducky-script-lang-vscode
   dakara.transformer
   DavidAnson.vscode-markdownlint
   dbaeumer.vscode-eslint
   denoland.vscode-deno
-  Divlo.vscode-styled-jsx-languageserver
-  Divlo.vscode-styled-jsx-syntax
   drKnoxy.eslint-disable-snippets
-  dsznajder.es7-react-js-snippets
   eamodio.gitlens
   EditorConfig.EditorConfig
   esbenp.prettier-vscode
+  fabiospampinato.vscode-open-in-github
   foxundermoon.shell-format
   GitHub.codespaces
   GitHub.copilot
+  GitHub.copilot-labs
   GitHub.github-vscode-theme
   golang.go
   GraphQL.vscode-graphql
   GraphQL.vscode-graphql-execution
   GraphQL.vscode-graphql-syntax
   jock.svg
+  jripouteau.adonis-vscode-extension
   mikestead.dotenv
   monokai.theme-monokai-pro-vscode
   ms-azuretools.vscode-docker
-  ms-python.isort
   ms-python.python
   ms-python.vscode-pylance
   ms-vscode-remote.remote-ssh
@@ -53,6 +54,8 @@ VSCODE_EXTENSIONS=(
   ms-vscode.remote-explorer
   ms-vsliveshare.vsliveshare
   naumovs.color-highlight
+  Orta.vscode-twoslash-queries
+  pbkit.vscode-pbkit
   Prisma.prisma
   pustelto.bracketeer
   redhat.vscode-commons
@@ -61,15 +64,20 @@ VSCODE_EXTENSIONS=(
   richie5um2.vscode-sort-json
   rust-lang.rust-analyzer
   sburg.vscode-javascript-booster
+  styled-components.vscode-styled-components
+  tamasfe.even-better-toml
+  tldraw-org.tldraw-vscode
   twxs.cmake
   unifiedjs.vscode-mdx
-  usernamehw.errorlens
   VisualStudioExptTeam.vscodeintellicode
+  vunguyentuan.vscode-postcss
   WallabyJs.quokka-vscode
-  will-stone.plastic
   wmaurer.change-case
+  xdebug.php-debug
+  xdebug.php-pack
   yzhang.markdown-all-in-one
   zachhardesty.convert-object-to-jsx-vscode
+  zobo.php-intellisense
 )
 echo "Installing vscode extensions..." &&
   for EXTENSION in $VSCODE_EXTENSIONS; do

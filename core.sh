@@ -41,21 +41,24 @@ BREW_INSTALL_FORMULAS=(
   fzf
   gh
   git
+  git-filter-repo
   git-lfs
   go
-  gnu-sed
+  "gnu-sed --with-default-names"
+  gnupg
   graphviz
+  grep
   hub
   jq
   mas
   mkcert
   neovim
   openjdk
+  openssh
   python
   sqlite
   the_silver_searcher
   tree
-  vim
   wget
   zsh
   zsh-syntax-highlighting

@@ -22,7 +22,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 MKDIR_PATHS=(
-  ~/.config/tabtab/zsh
   ~/.ssh
 )
 for MKDIR_PATH in $MKDIR_PATHS; do
@@ -31,8 +30,6 @@ for MKDIR_PATH in $MKDIR_PATHS; do
 done
 
 REMOTE_HOME_FILES=(
-  .config/tabtab/zsh/__tabtab.zsh
-  .config/tabtab/zsh/pnpm.zsh
   .ssh/config
   .gitconfig
   .profile
@@ -67,12 +64,12 @@ BREW_CASK_INSTALL_FORMULAS=(
   1password
   airbuddy
   bartender
+  battle-net
   cleanmymac
   cleanshot
   cyberduck
   dbngin
   discord
-  docker
   font-jetbrains-mono-nerd-font
   fork
   gitkraken
@@ -87,11 +84,15 @@ BREW_CASK_INSTALL_FORMULAS=(
   master-pdf-editor
   microsoft-auto-update
   microsoft-office
+  monitorcontrol
   mullvadvpn
   obs
-  onyx
+  orbstack
   paragon-ntfs
   pixelsnap
+  proxyman
+  qflipper
+  rapidapi
   raycast
   rectangle
   slack
@@ -128,10 +129,8 @@ MAS_IDS=(
   1294126402 # HEIC Converter
   920404675  # Monodraw
   1464122853 # NextDNS
-  409201541  # Pages
   1289583905 # Pixelmator Pro
-  1596706466 # Speediness
-  1475387142 # Tailscale
+  1519867270 # Refined GitHub
   747648890  # Telegram
   899247664  # TestFlight
   425424353  # The Unarchiver
@@ -151,19 +150,14 @@ bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
 echo "Installing Node.js runtimes via fnm ..."
 fnm install --lts
-fnm install 16
-fnm alias 16 default
+fnm alias lts-latest default
 
 # echo "Installing npm, yarn, and various packages ..."
 # node-update-globals
 
 echo "Installing pip packages ..."
 pip3 install --upgrade pip
-pip3 install neovim virtualenv watchdog
-
-echo "Installing 'main' virtualenv ..."
-mkdir -p ~/.virtualenvs
-virtualenv ~/.virtualenvs/main
+pip3 install neovim watchdog
 
 echo "Setting up fzf ..."
 $BREW_PREFIX/opt/fzf/install
