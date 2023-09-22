@@ -7,3 +7,6 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
 fi
 
 eval "$($BREW_PREFIX/bin/brew shellenv)"
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+source $HOME/.orbstack/shell/init.zsh 2>/dev/null || :
+

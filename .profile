@@ -8,6 +8,9 @@ fi
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+export BUN_INSTALL=$HOME/.bun
+export PATH=$BUN_INSTALL/bin:$PATH
+
 export DENO_INSTALL=$HOME/.deno
 export PATH=$DENO_INSTALL/bin:$PATH
 

@@ -62,17 +62,21 @@ done
 
 BREW_CASK_INSTALL_FORMULAS=(
   1password
+  1password-cli
   airbuddy
-  bartender
+  arc
   battle-net
   cleanmymac
   cleanshot
+  crossover
   cyberduck
   dbngin
   discord
+  figma
   font-jetbrains-mono-nerd-font
   fork
   gitkraken
+  google-cloud-sdk
   gpg-suite-no-mail
   imageoptim
   iterm2
@@ -84,11 +88,13 @@ BREW_CASK_INSTALL_FORMULAS=(
   master-pdf-editor
   microsoft-auto-update
   microsoft-office
+  mist
   monitorcontrol
   mullvadvpn
   obs
   orbstack
   paragon-ntfs
+  parallels
   pixelsnap
   proxyman
   qflipper
@@ -142,10 +148,13 @@ for ID in $MAS_IDS; do
   mas install $ID
 done
 
-echo "Installing Deno..."
+echo "Installing Bun ..."
+bash -c "$(curl -fsSL https://bun.sh/install)"
+
+echo "Installing Deno ..."
 bash -c "$(curl -fsSL https://deno.land/x/install/install.sh)"
 
-echo "Installing Rust..."
+echo "Installing Rust ..."
 bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
 echo "Installing Node.js runtimes via fnm ..."

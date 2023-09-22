@@ -1,5 +1,8 @@
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 
+# https://stackoverflow.com/a/57591830/4273667
+# export GPG_TTY=$(tty)
+
 # Local brew prefix check, see https://dotfiles.griko.id/check-arch.sh
 ARCH_NAME="$(uname -m)"
 if [ "${ARCH_NAME}" = "x86_64" ]; then
@@ -14,6 +17,9 @@ export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # Register custom paths
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+export BUN_INSTALL=$HOME/.bun
+export PATH=$BUN_INSTALL/bin:$PATH
 
 export DENO_INSTALL=$HOME/.deno
 export PATH=$DENO_INSTALL/bin:$PATH
@@ -109,7 +115,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew common-aliases docker git last-working-dir pip rust sudo zsh-syntax-highlighting)
+plugins=(brew docker git pip rust sudo zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -153,6 +159,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Custom function to run all update/upgrade commands
 brew-everything() {
+  bun upgrade
   deno upgrade
   fnm install --lts
   pip3 install --upgrade pip &&
@@ -187,7 +194,7 @@ dedupe-open-with-entries() {
 
 # Custom function to reinstall yarn global packages
 node-update-globals() {
-  # npm -g i npm corepack
+  npm -g i npm corepack
   corepack enable pnpm
   corepack enable yarn
   corepack prepare --activate pnpm@latest
@@ -201,6 +208,7 @@ node-update-globals() {
     prettier
     serve
     speed-test
+    tsx
     vercel
   )
   pnpm --global add $NODE_GLOBAL_PACKAGES

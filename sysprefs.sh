@@ -14,10 +14,10 @@ while true; do
 done 2>/dev/null &
 
 echo "Updating computer name..."
-sudo scutil --set ComputerName "0xD34DB33F"
-sudo scutil --set HostName "0xD34DB33F"
-sudo scutil --set LocalHostName "0xD34DB33F"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0xD34DB33F"
+sudo scutil --set ComputerName "${HOSTNAME:-0xDEADBEEF}"
+sudo scutil --set HostName "${HOSTNAME:-0xDEADBEEF}"
+sudo scutil --set LocalHostName "${HOSTNAME:-0xDEADBEEF}"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "${HOSTNAME:-0xDEADBEEF}"
 
 echo "Updating system configurations..."
 

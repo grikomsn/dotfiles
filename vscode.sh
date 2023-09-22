@@ -1,10 +1,13 @@
 #!/usr/bin/env zsh
 
 VSCODE_EXTENSIONS=(
+  1Password.op-vscode
   aaron-bond.better-comments
-  antfu.icons-carbon
+  ahmadalli.vscode-nginx-conf
   antfu.open-in-github-button
+  apollographql.vscode-apollo
   artdiniz.quitcontrol-vscode
+  asciidoctor.asciidoctor-vscode
   astro-build.astro-vscode
   bierner.comment-tagged-templates
   bierner.folder-source-actions
@@ -20,9 +23,9 @@ VSCODE_EXTENSIONS=(
   chenglou92.rescript-vscode
   christian-kohler.path-intellisense
   codezombiech.gitignore
-  cvbenur.ducky-script-lang-vscode
   dakara.transformer
   DavidAnson.vscode-markdownlint
+  davidbwaters.macos-modern-theme
   dbaeumer.vscode-eslint
   denoland.vscode-deno
   drKnoxy.eslint-disable-snippets
@@ -30,17 +33,18 @@ VSCODE_EXTENSIONS=(
   EditorConfig.EditorConfig
   esbenp.prettier-vscode
   fabiospampinato.vscode-open-in-github
+  figma.figma-vscode-extension
   foxundermoon.shell-format
   GitHub.codespaces
   GitHub.copilot
-  GitHub.copilot-labs
+  GitHub.copilot-chat
   GitHub.github-vscode-theme
   golang.go
   GraphQL.vscode-graphql
   GraphQL.vscode-graphql-execution
   GraphQL.vscode-graphql-syntax
   jock.svg
-  jripouteau.adonis-vscode-extension
+  miguelsolorio.min-theme
   mikestead.dotenv
   monokai.theme-monokai-pro-vscode
   ms-azuretools.vscode-docker
@@ -52,6 +56,7 @@ VSCODE_EXTENSIONS=(
   ms-vscode.cpptools
   ms-vscode.makefile-tools
   ms-vscode.remote-explorer
+  ms-vscode.remote-server
   ms-vsliveshare.vsliveshare
   naumovs.color-highlight
   Orta.vscode-twoslash-queries
@@ -73,11 +78,9 @@ VSCODE_EXTENSIONS=(
   vunguyentuan.vscode-postcss
   WallabyJs.quokka-vscode
   wmaurer.change-case
-  xdebug.php-debug
-  xdebug.php-pack
   yzhang.markdown-all-in-one
   zachhardesty.convert-object-to-jsx-vscode
-  zobo.php-intellisense
+  zengxingxin.sort-js-object-keys
 )
 echo "Installing vscode extensions..." &&
   for EXTENSION in $VSCODE_EXTENSIONS; do

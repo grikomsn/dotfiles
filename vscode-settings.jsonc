@@ -11,11 +11,17 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[graphql]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -35,6 +41,12 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
@@ -50,12 +62,17 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "color-highlight.markRuler": false,
   "deno.enable": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    // "source.fixAll": true,
+    // "source.organizeImports": true
+  },
   "editor.fontFamily": "'SF Mono', Consolas, Monaco, monospace",
   "editor.fontLigatures": false,
+  "editor.fontWeight": "500",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -84,9 +101,9 @@
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
   "eslint.onIgnoredFiles": "warn",
-  "eslint.packageManager": "pnpm",
   "extensions.ignoreRecommendations": true,
   "files.associations": {
+    "*.mdoc": "markdown",
     "_redirects": "plaintext"
   },
   "files.insertFinalNewline": true,
@@ -97,7 +114,7 @@
   "git.alwaysShowStagedChangesResourceGroup": true,
   "git.autofetch": true,
   "git.confirmSync": false,
-  "git.enableCommitSigning": true,
+  "git.enableCommitSigning": false,
   "git.enableSmartCommit": true,
   "git.showPushSuccessNotification": true,
   "git.supportCancellation": true,
@@ -106,8 +123,11 @@
     "*": true,
     "markdown": true,
     "plaintext": true,
+    "scminput": false,
     "yaml": true
   },
+  "gitlens.graph.minimap.additionalTypes": ["localBranches"],
+  "gitlens.graph.minimap.enabled": false,
   "gitlens.graph.statusBar.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
@@ -116,6 +136,7 @@
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdown.extension.toc.levels": "2..6",
   "markdown.extension.toc.slugifyMode": "github",
+  "markdown.occurrencesHighlight.enabled": true,
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "mdx.experimentalLanguageServer": true,
   "npm.packageManager": "pnpm",
@@ -131,17 +152,21 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.enableBell": true,
+  // "terminal.integrated.fontWeight": "500",
   "terminal.integrated.smoothScrolling": true,
   "typescript.surveys.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "update.showReleaseNotes": false,
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "window.autoDetectColorScheme": true,
   "window.commandCenter": true,
   "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
-  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "workbench.colorTheme": "MacOS Modern Dark - Ventura Xcode",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
-  "workbench.productIconTheme": "icons-carbon",
+  "workbench.preferredDarkColorTheme": "MacOS Modern Dark - Ventura Xcode",
+  "workbench.preferredLightColorTheme": "MacOS Modern Light - Ventura Xcode",
+  "workbench.productIconTheme": "macos-modern",
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 18,
   "workbench.view.alwaysShowHeaderActions": true

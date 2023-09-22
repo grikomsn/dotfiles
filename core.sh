@@ -32,11 +32,13 @@ brew tap homebrew/services
 
 BREW_INSTALL_FORMULAS=(
   bash
+  buf
   cmake
   coreutils
   curl
   ffmpeg
   findutils
+  flyctl
   fnm
   fzf
   gh
@@ -48,14 +50,18 @@ BREW_INSTALL_FORMULAS=(
   gnupg
   graphviz
   grep
+  helm
   hub
+  imagemagick
   jq
   mas
   mkcert
   neovim
   openjdk
   openssh
+  pandoc
   python
+  sops
   sqlite
   the_silver_searcher
   tree

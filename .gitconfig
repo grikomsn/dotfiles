@@ -16,4 +16,10 @@ forceSignAnnotated = true
 [user]
 name = Griko Nibras
 email = griko@nibras.co
-signingKey = E6D097D3DA7C838FCEAF16631BA6B0E9E807B356
+signingKey = C8D144D7CBD8E183244969E1194CDB6C6785C7B3
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+process = git-lfs filter-process
+required = true
+smudge = git-lfs smudge -- %f
