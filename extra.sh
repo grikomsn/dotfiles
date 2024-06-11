@@ -45,69 +45,53 @@ done
 echo "Loading ~/.zshrc ..."
 source ~/.zshrc
 
-echo "Tapping additional Homebrew casks ..."
-brew tap dopplerhq/cli
-
-BREW_EXTRA_INSTALL_FORMULAS=(
-  dopplerhq/cli/doppler
-)
-echo "Installing additional Homebrew formulas ..."
-for FORMULA in $BREW_EXTRA_INSTALL_FORMULAS; do
-  if [[ "${PREFER_REINSTALL}" ]]; then
-    brew reinstall $FORMULA
-  else
-    brew install $FORMULA
-  fi
-done
-
 BREW_CASK_INSTALL_FORMULAS=(
   1password
   1password-cli
   airbuddy
-  arc
-  battle-net
+  betterdisplay
   cleanmymac
   cleanshot
-  crossover
   cyberduck
   dbngin
   discord
+  equinox
   figma
-  font-jetbrains-mono-nerd-font
+  font-sf-mono-for-powerline
   fork
-  gitkraken
-  google-cloud-sdk
+  google-chrome-dev
   gpg-suite-no-mail
   imageoptim
   iterm2
   jetbrains-toolbox
   keyboardcleantool
+  linear-linear
   logi-options-plus
   loopback
   macs-fan-control
   master-pdf-editor
-  microsoft-auto-update
-  microsoft-office
   mist
-  monitorcontrol
   mullvadvpn
+  ngrok
+  notion
   obs
+  opal-composer
   orbstack
   paragon-ntfs
   parallels
-  pixelsnap
   proxyman
   qflipper
   rapidapi
   raycast
-  rectangle
+  rectangle-pro
+  rode-connect
+  screen-studio
   slack
   spotify
   steam
   tableplus
   visual-studio-code
   vlc
-  webtorrent
   whatsapp
   zoom
 )
@@ -123,7 +107,6 @@ done
 # mas list | sort -b -k2
 MAS_IDS=(
   1569813296 # 1Password for Safari
-  824171161  # Affinity Designer
   937984704  # Amphetamine
   611658502  # Boxy SVG
   1287239339 # ColorSlurp

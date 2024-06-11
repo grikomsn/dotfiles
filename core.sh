@@ -23,51 +23,61 @@ read -p "Press any key to install Homebrew ..."
 echo "Installing Homebrew ..."
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Tapping Homebrew casks ..."
-brew tap homebrew/cask
-brew tap homebrew/cask-drivers
-brew tap homebrew/cask-fonts
-brew tap homebrew/cask-versions
-brew tap homebrew/services
-
 BREW_INSTALL_FORMULAS=(
   bash
-  buf
   cmake
   coreutils
   curl
   ffmpeg
   findutils
-  flyctl
   fnm
   fzf
+  gcc
+  gd
   gh
+  ghostscript
+  gifski
   git
   git-filter-repo
   git-lfs
-  go
-  "gnu-sed --with-default-names"
+  gmp
+  gnu-sed
   gnupg
+  gnutls
+  go
   graphviz
   grep
-  helm
   hub
   imagemagick
   jq
   mas
   mkcert
+  ncurses
   neovim
+  numpy
+  oniguruma
+  openapi-generator
   openjdk
   openssh
+  openssl
   pandoc
+  pinentry
+  pngquant
+  protobuf
+  protoc-gen-go-grpc
   python
   sops
   sqlite
+  tesseract
   the_silver_searcher
   tree
+  tree-sitter
   wget
+  xz
+  yq
   zsh
   zsh-syntax-highlighting
+  zstd
 )
 echo "Installing essential Homebrew formulas ..."
 for FORMULA in $BREW_INSTALL_FORMULAS; do

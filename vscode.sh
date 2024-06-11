@@ -1,14 +1,14 @@
 #!/usr/bin/env zsh
 
 VSCODE_EXTENSIONS=(
-  1Password.op-vscode
+  1password.op-vscode
   aaron-bond.better-comments
-  ahmadalli.vscode-nginx-conf
+  adpyke.vscode-userscript
+  antfu.icons-carbon
   antfu.open-in-github-button
   apollographql.vscode-apollo
   artdiniz.quitcontrol-vscode
   asciidoctor.asciidoctor-vscode
-  astro-build.astro-vscode
   bierner.comment-tagged-templates
   bierner.folder-source-actions
   bierner.github-markdown-preview
@@ -18,36 +18,41 @@ VSCODE_EXTENSIONS=(
   bierner.markdown-mermaid
   bierner.markdown-preview-github-styles
   bierner.markdown-yaml-preamble
+  boyswan.glsl-literal
+  bpruitt-goddard.mermaid-markdown-syntax-highlighting
   bradlc.vscode-tailwindcss
   bufbuild.vscode-buf
   chenglou92.rescript-vscode
   christian-kohler.path-intellisense
   codezombiech.gitignore
   dakara.transformer
-  DavidAnson.vscode-markdownlint
-  davidbwaters.macos-modern-theme
+  davidanson.vscode-markdownlint
   dbaeumer.vscode-eslint
   denoland.vscode-deno
-  drKnoxy.eslint-disable-snippets
+  divlo.vscode-styled-jsx-languageserver
+  drknoxy.eslint-disable-snippets
   eamodio.gitlens
-  EditorConfig.EditorConfig
+  editorconfig.editorconfig
   esbenp.prettier-vscode
   fabiospampinato.vscode-open-in-github
-  figma.figma-vscode-extension
   foxundermoon.shell-format
-  GitHub.codespaces
-  GitHub.copilot
-  GitHub.copilot-chat
-  GitHub.github-vscode-theme
+  github.codespaces
+  github.copilot
+  github.copilot-chat
+  github.github-vscode-theme
+  github.remotehub
+  github.vscode-github-actions
+  github.vscode-pull-request-github
   golang.go
-  GraphQL.vscode-graphql
-  GraphQL.vscode-graphql-execution
-  GraphQL.vscode-graphql-syntax
+  graphql.vscode-graphql
+  graphql.vscode-graphql-execution
+  graphql.vscode-graphql-syntax
   jock.svg
-  miguelsolorio.min-theme
+  josee9988.minifyall
+  mddanishyusuf.iconbuddy-vs-code-plugin
   mikestead.dotenv
-  monokai.theme-monokai-pro-vscode
   ms-azuretools.vscode-docker
+  ms-python.debugpy
   ms-python.python
   ms-python.vscode-pylance
   ms-vscode-remote.remote-ssh
@@ -56,28 +61,36 @@ VSCODE_EXTENSIONS=(
   ms-vscode.cpptools
   ms-vscode.makefile-tools
   ms-vscode.remote-explorer
+  ms-vscode.remote-repositories
   ms-vscode.remote-server
   ms-vsliveshare.vsliveshare
+  mylesmurphy.prettify-ts
   naumovs.color-highlight
-  Orta.vscode-twoslash-queries
+  orta.vscode-twoslash-queries
   pbkit.vscode-pbkit
-  Prisma.prisma
+  prisma.prisma
   pustelto.bracketeer
+  pveyes.aperture
   redhat.vscode-commons
   redhat.vscode-xml
   redhat.vscode-yaml
   richie5um2.vscode-sort-json
   rust-lang.rust-analyzer
+  sanity-io.vscode-sanity
   sburg.vscode-javascript-booster
+  slevesque.shader
+  sourcegraph.cody-ai
   styled-components.vscode-styled-components
   tamasfe.even-better-toml
+  tauri-apps.tauri-vscode
   tldraw-org.tldraw-vscode
   twxs.cmake
   unifiedjs.vscode-mdx
-  VisualStudioExptTeam.vscodeintellicode
   vunguyentuan.vscode-postcss
-  WallabyJs.quokka-vscode
+  wallabyjs.quokka-vscode
   wmaurer.change-case
+  yoavbls.pretty-ts-errors
+  yunduo.color-highlight-css-color-4
   yzhang.markdown-all-in-one
   zachhardesty.convert-object-to-jsx-vscode
   zengxingxin.sort-js-object-keys

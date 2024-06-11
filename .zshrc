@@ -12,7 +12,6 @@ elif [ "${ARCH_NAME}" = "arm64" ]; then
 fi
 
 # Temporary overrides
-export _PIP_LOCATIONS_NO_WARN_ON_MISMATCH=1
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # Register custom paths
@@ -53,7 +52,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="lambda"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -150,7 +149,17 @@ export LC_ALL='en_US.UTF-8'
 alias git="hub"
 alias vim="nvim"
 
-# Integration for fnm
+# Custom cargo envs
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
+
+# Custom node envs
+export DISABLE_OPENCOLLECTIVE=1
+export ADBLOCK=1
+
+# Integration for bun completions
+[ -s "/Users/griko/.bun/_bun" ] && source "/Users/griko/.bun/_bun"
+
+# Integration for fnm completions
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Integration and overrides for fzf
@@ -162,8 +171,6 @@ brew-everything() {
   bun upgrade
   deno upgrade
   fnm install --lts
-  pip3 install --upgrade pip &&
-    pip3 install neovim watchdog
   rustup upgrade
   brew update -vvv
   brew upgrade -vvv
@@ -171,6 +178,11 @@ brew-everything() {
   brew doctor -vvv
   brew autoremove -vvv
   omz update -vvv
+}
+
+# Custom function to remove empty directories
+cleanup-empty-dirs() {
+  find . -type d -empty -exec rmdir {} \;
 }
 
 # Custom function to create a data url from a file
@@ -182,14 +194,22 @@ dataurl() {
   echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
-# Custom function to list dangling commits
-git-save-me() {
-  git log --graph --oneline --decorate $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
-}
-
 # Custom function to remove duplicate "Open with" entries
 dedupe-open-with-entries() {
   /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+}
+
+dequarantine-directory() {
+  xattr -rd com.apple.quarantine "$@"
+}
+
+dequarantine-file() {
+  xattr -c "$@"
+}
+
+# Custom function to list dangling commits
+git-save-me() {
+  git log --graph --oneline --decorate $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
 }
 
 # Custom function to reinstall yarn global packages
@@ -200,7 +220,6 @@ node-update-globals() {
   corepack prepare --activate pnpm@latest
   corepack prepare --activate yarn@1.22.19
   local NODE_GLOBAL_PACKAGES=(
-    @vercel/ncc
     graphql
     graphql-language-service-cli
     neovim

@@ -1,11 +1,17 @@
 [commit]
-gpgSign = true
+gpgsign = false
 
-[gpg]
-program = gpg
+[credential]
+helper = store
+
+[gpg "ssh"]
+program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [init]
 defaultBranch = main
+
+[mergetool]
+keepBackup = true
 
 [pull]
 rebase = false
