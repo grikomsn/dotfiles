@@ -129,7 +129,7 @@ export ADBLOCK=1
 [ -s "/Users/griko/.bun/_bun" ] && source "/Users/griko/.bun/_bun"
 
 # Integration for fly completions
-eval "$(fly completion zsh)"
+eval "$(fly completion --shell zsh)"
 
 # Integration for fnm completions
 eval "$(fnm env --use-on-cd --shell zsh)"
