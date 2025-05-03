@@ -60,7 +60,6 @@ BREW_INSTALL_FORMULAS=(
   tree
   wget
   zsh
-  zsh-syntax-highlighting
 )
 echo "Installing essential Homebrew formulas ..."
 for FORMULA in $BREW_INSTALL_FORMULAS; do
