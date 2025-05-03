@@ -62,7 +62,7 @@ BREW_CASK_INSTALL_FORMULAS=(
   font-sf-mono-for-powerline
   fork
   ghostty
-  google-chrome-dev
+  google-chrome@dev
   gpg-suite-no-mail
   imageoptim
   keyboardcleantool
