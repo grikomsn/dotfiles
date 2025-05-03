@@ -26,24 +26,19 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 BREW_INSTALL_FORMULAS=(
   bash
   cmake
+  composer
   coreutils
   curl
   ffmpeg
   findutils
   fnm
-  fzf
   gcc
-  gd
   gh
   ghostscript
-  gifski
   git
   git-filter-repo
   git-lfs
-  gmp
-  gnu-sed
   gnupg
-  gnutls
   go
   graphviz
   grep
@@ -54,30 +49,18 @@ BREW_INSTALL_FORMULAS=(
   mkcert
   ncurses
   neovim
-  numpy
-  oniguruma
-  openapi-generator
-  openjdk
   openssh
   openssl
   pandoc
-  pinentry
-  pngquant
+  php
   protobuf
-  protoc-gen-go-grpc
   python
+  python@3.12
   sops
-  sqlite
-  tesseract
-  the_silver_searcher
   tree
-  tree-sitter
   wget
-  xz
-  yq
   zsh
   zsh-syntax-highlighting
-  zstd
 )
 echo "Installing essential Homebrew formulas ..."
 for FORMULA in $BREW_INSTALL_FORMULAS; do

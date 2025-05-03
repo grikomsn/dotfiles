@@ -4,8 +4,23 @@ gpgsign = false
 [credential]
 helper = store
 
+[diff "bun"]
+binary = true
+cachetextconv = true
+textconv = bun
+
+[gpg]
+program = /opt/homebrew/bin/gpg
+format = openpgp
+
 [gpg "ssh"]
 program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+process = git-lfs filter-process
+required = true
+smudge = git-lfs smudge -- %f
 
 [init]
 defaultBranch = main
@@ -22,10 +37,4 @@ forceSignAnnotated = true
 [user]
 name = Griko Nibras
 email = griko@nibras.co
-signingKey = C8D144D7CBD8E183244969E1194CDB6C6785C7B3
-
-[filter "lfs"]
-clean = git-lfs clean -- %f
-process = git-lfs filter-process
-required = true
-smudge = git-lfs smudge -- %f
+signingkey = C8D144D7CBD8E183244969E1194CDB6C6785C7B3

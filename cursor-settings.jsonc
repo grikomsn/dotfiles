@@ -1,0 +1,257 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "LorisCro.super"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-remark"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[snippets]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "chat.editor.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "clangd.path": "/usr/bin/clangd",
+  "cmake.options.statusBarVisibility": "visible",
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showOptionsMovedNotification": false,
+  "color-highlight.markRuler": false,
+  "cursor.composer.collapsePaneInputBoxPills": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.diffs.useCharacterLevelDiffs": true,
+  "debug.console.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "deno.enable": false,
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
+  "editor.codeLensFontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "editor.experimentalInlineEdit.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "editor.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 12,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.inlayHints.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.largeFileOptimizations": false,
+  "editor.lineHeight": 1.75,
+  "editor.linkedEditing": true,
+  "editor.minimap.autohide": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.snippetSuggestions": "inline",
+  "editor.suggest.insertMode": "replace",
+  "editor.suggest.selectionMode": "always",
+  "editor.suggest.showStatusBar": true,
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "comments": {
+      "fontStyle": ""
+    },
+    "functions": {
+      "fontStyle": ""
+    },
+    "keywords": {
+      "fontStyle": ""
+    },
+    "textMateRules": [
+      {
+        "scope": "meta.tag.attributes entity.other.attribute-name",
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ],
+    "types": {
+      "fontStyle": ""
+    },
+    "variables": {
+      "fontStyle": ""
+    }
+  },
+  "emmet.includeLanguages": {
+    "astro": "html",
+    "edge": "html",
+    "javascript": "javascriptreact",
+    "markdown": "javascriptreact",
+    "mdx": "javascriptreact",
+    "rescript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": false,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.onIgnoredFiles": "warn",
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "_redirects": "plaintext",
+    "*.css": "tailwindcss",
+    "*.mdoc": "markdown",
+    "CODEOWNERS": "plaintext"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.allowForcePush": true,
+  "git.allowNoVerifyCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": true,
+  "git.replaceTagsWhenPull": true,
+  "git.showPushSuccessNotification": true,
+  "git.supportCancellation": true,
+  "git.useCommitInputAsStashMessage": true,
+  "github.copilot.chat.completionContext.typescript.mode": "sidecar",
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "github.copilot.chat.edits.codesearch.enabled": true,
+  "github.copilot.chat.followUps": "always",
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.search.semanticTextResults": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "githubPullRequests.experimental.chat": true,
+  "githubPullRequests.experimental.notificationsView": true,
+  "githubPullRequests.experimental.useQuickChat": true,
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": true
+  },
+  "gitlens.currentLine.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "gitlens.graph.layout": "editor",
+  "gitlens.graph.minimap.additionalTypes": ["localBranches"],
+  "gitlens.graph.minimap.enabled": false,
+  "gitlens.graph.statusBar.enabled": false,
+  "gitlens.home.preview.enabled": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.telemetry.enabled": false,
+  "gitlens.views.branches.avatars": false,
+  "gitlens.views.branches.files.layout": "list",
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "gitlens.views.commits.avatars": false,
+  "gitlens.views.commits.files.layout": "tree",
+  "gitlens.views.commits.pullRequests.enabled": false,
+  "gitlens.views.commits.pullRequests.showForBranches": false,
+  "gitlens.views.commits.showBranchComparison": false,
+  "gitlens.views.remotes.avatars": false,
+  "gitlens.views.remotes.files.layout": "tree",
+  "gitlens.views.remotes.pullRequests.enabled": false,
+  "gitlens.views.remotes.pullRequests.showForBranches": false,
+  "gitlens.views.scm.grouped.views": {
+    "branches": false,
+    "commits": false,
+    "contributors": false,
+    "launchpad": false,
+    "remotes": false,
+    "repositories": false,
+    "searchAndCompare": false,
+    "stashes": false,
+    "tags": false,
+    "worktrees": false
+  },
+  "gitlens.views.stashes.files.layout": "tree",
+  "gitlens.views.tags.avatars": false,
+  "go.survey.prompt": false,
+  "intelephense.telemetry.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "makefile.configureOnOpen": true,
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "notebook.output.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "npm.packageManager": "auto",
+  "prettier.enableDebugLogs": false,
+  "prettier.useEditorConfig": false,
+  "redhat.telemetry.enabled": false,
+  "scm.inputFontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "search.quickOpen.includeSymbols": true,
+  "search.showLineNumbers": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "svg.preview.mode": "img",
+  "tailwindCSS.emmetCompletions": true,
+  "telemetry.telemetryLevel": "off",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.confirmOnExit": "always",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.enableVisualBell": true,
+  "terminal.integrated.fontFamily": "'SF Mono Powerline', 'SF Mono', Consolas, Monaco, monospace",
+  "typescript.surveys.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "update.showReleaseNotes": false,
+  "window.autoDetectColorScheme": true,
+  "window.confirmBeforeClose": "always",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 12,
+  "workbench.view.alwaysShowHeaderActions": true
+}

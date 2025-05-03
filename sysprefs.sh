@@ -4,6 +4,7 @@
 
 # close any open system preferences panes, to prevent them from overriding settings we're about to change
 osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'tell application "System Settings" to quit'
 
 # ask for the administrator password upfront and update existing `sudo` time stamp until `.macos` has finished
 sudo -v
@@ -14,10 +15,12 @@ while true; do
 done 2>/dev/null &
 
 echo "Updating computer name..."
-sudo scutil --set ComputerName "${HOSTNAME:-0xDEADBEEF}"
-sudo scutil --set HostName "${HOSTNAME:-0xDEADBEEF}"
-sudo scutil --set LocalHostName "${HOSTNAME:-0xDEADBEEF}"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "${HOSTNAME:-0xDEADBEEF}"
+if [ -n "${CUSTOM_HOSTNAME}" ]; then
+  sudo scutil --set ComputerName "${CUSTOM_HOSTNAME}"
+  sudo scutil --set HostName "${CUSTOM_HOSTNAME}"
+  sudo scutil --set LocalHostName "${CUSTOM_HOSTNAME}"
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "${CUSTOM_HOSTNAME}"
+fi
 
 echo "Updating system configurations..."
 
@@ -105,7 +108,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Note: if you're in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
 defaults write NSGlobalDomain AppleLanguages -array "en"
-defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleLocale -string "en_ID"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 

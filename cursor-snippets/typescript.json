@@ -1,0 +1,15 @@
+{
+  "Self-infer variable": {
+    "prefix": "!sif",
+    "body": [
+      "const ${1:variable} = (<T extends ${2:unknown}>(t: T) => t)(${0:$TM_SELECTED_TEXT})"
+    ]
+  },
+  "Log selected text to the console": {
+    "isFileTemplate": false,
+    "prefix": "log",
+    "body": [
+      "console.log(\"${0:$TM_SELECTED_TEXT}\", ${0:$TM_SELECTED_TEXT});\n"
+    ]
+  }
+}

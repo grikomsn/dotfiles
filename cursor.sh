@@ -1,14 +1,56 @@
 #!/usr/bin/env zsh
 
-VSCODE_EXTENSIONS=(
+APP_USER_PATH="$HOME/Library/Application\ Support/Cursor/User"
+DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.nibras.co}"
+
+cd $HOME
+
+MKDIR_PATHS=(
+  ".cursor"
+  "$APP_USER_PATH/snippets"
+)
+for MKDIR_PATH in "${MKDIR_PATHS[@]}"; do
+  echo "Creating $MKDIR_PATH directory ..."
+  mkdir -p "$HOME/$MKDIR_PATH"
+done
+
+SYMLINK_PATHS=(
+  ".vscode"
+  ".vscode-oss"
+)
+
+echo "Setup symlinks ..."
+for SYMLINK_PATH in "${SYMLINK_PATHS[@]}"; do
+  echo "Creating $SYMLINK_PATH symlink ..."
+  ln -s .cursor $SYMLINK_PATH
+done
+
+echo "Setup configuration files ..."
+mkdir -p $APP_USER_PATH
+curl -fsSL https://$DF_HOSTNAME/cursor-keybindings.jsonc >$APP_USER_PATH/keybindings.json
+curl -fsSL https://$DF_HOSTNAME/cursor-settings.jsonc >$APP_USER_PATH/settings.json
+
+SNIPPET_PATHS=(
+  "javascript.json"
+  "javascriptreact.json"
+  "typescript.json"
+  "typescriptreact.json"
+)
+
+echo "Setup snippets ..."
+mkdir -p $APP_USER_PATH/snippets
+for SNIPPET_PATH in "${SNIPPET_PATHS[@]}"; do
+  curl -fsSL https://$DF_HOSTNAME/cursor-snippets/$SNIPPET_PATH >$APP_USER_PATH/snippets/$SNIPPET_PATH
+done
+
+EXTENSIONS=(
   1password.op-vscode
   aaron-bond.better-comments
   adpyke.vscode-userscript
-  antfu.icons-carbon
-  antfu.open-in-github-button
-  apollographql.vscode-apollo
-  artdiniz.quitcontrol-vscode
+  anysphere.pyright
   asciidoctor.asciidoctor-vscode
+  astro-build.astro-vscode
+  aykutsarac.jsoncrack-vscode
   bierner.comment-tagged-templates
   bierner.folder-source-actions
   bierner.github-markdown-preview
@@ -18,23 +60,22 @@ VSCODE_EXTENSIONS=(
   bierner.markdown-mermaid
   bierner.markdown-preview-github-styles
   bierner.markdown-yaml-preamble
-  boyswan.glsl-literal
-  bpruitt-goddard.mermaid-markdown-syntax-highlighting
+  biomejs.biome
+  bmewburn.vscode-intelephense-client
   bradlc.vscode-tailwindcss
   bufbuild.vscode-buf
-  chenglou92.rescript-vscode
+  cardinal90.multi-cursor-case-preserve
+  charliermarsh.ruff
   christian-kohler.path-intellisense
   codezombiech.gitignore
   dakara.transformer
-  davidanson.vscode-markdownlint
   dbaeumer.vscode-eslint
   denoland.vscode-deno
-  divlo.vscode-styled-jsx-languageserver
+  dnicolson.binary-plist
   drknoxy.eslint-disable-snippets
   eamodio.gitlens
   editorconfig.editorconfig
   esbenp.prettier-vscode
-  fabiospampinato.vscode-open-in-github
   foxundermoon.shell-format
   github.codespaces
   github.copilot
@@ -47,9 +88,11 @@ VSCODE_EXTENSIONS=(
   graphql.vscode-graphql
   graphql.vscode-graphql-execution
   graphql.vscode-graphql-syntax
+  jamief.vscode-ssh-config-enhanced
   jock.svg
-  josee9988.minifyall
-  mddanishyusuf.iconbuddy-vs-code-plugin
+  laravel.vscode-laravel
+  llvm-vs-code-extensions.vscode-clangd
+  loriscro.super
   mikestead.dotenv
   ms-azuretools.vscode-docker
   ms-python.debugpy
@@ -57,47 +100,50 @@ VSCODE_EXTENSIONS=(
   ms-python.vscode-pylance
   ms-vscode-remote.remote-ssh
   ms-vscode-remote.remote-ssh-edit
+  ms-vscode.azure-repos
   ms-vscode.cmake-tools
   ms-vscode.cpptools
   ms-vscode.makefile-tools
   ms-vscode.remote-explorer
   ms-vscode.remote-repositories
   ms-vscode.remote-server
+  ms-vscode.wasm-wasi-core
   ms-vsliveshare.vsliveshare
+  mtxr.sqltools
+  mtxr.sqltools-driver-mysql
+  mtxr.sqltools-driver-pg
+  mtxr.sqltools-driver-sqlite
   mylesmurphy.prettify-ts
-  naumovs.color-highlight
   orta.vscode-twoslash-queries
+  oven.bun-vscode
   pbkit.vscode-pbkit
-  prisma.prisma
+  pulumi.pulumi-lsp-client
+  pulumi.pulumi-vscode-tools
   pustelto.bracketeer
-  pveyes.aperture
   redhat.vscode-commons
   redhat.vscode-xml
   redhat.vscode-yaml
-  richie5um2.vscode-sort-json
   rust-lang.rust-analyzer
-  sanity-io.vscode-sanity
   sburg.vscode-javascript-booster
-  slevesque.shader
-  sourcegraph.cody-ai
-  styled-components.vscode-styled-components
   tamasfe.even-better-toml
+  tanvir.ollama-modelfile
   tauri-apps.tauri-vscode
   tldraw-org.tldraw-vscode
+  tlent.jest-snapshot-language-support
   twxs.cmake
   unifiedjs.vscode-mdx
-  vunguyentuan.vscode-postcss
+  unifiedjs.vscode-remark
   wallabyjs.quokka-vscode
   wmaurer.change-case
   yoavbls.pretty-ts-errors
   yunduo.color-highlight-css-color-4
-  yzhang.markdown-all-in-one
   zachhardesty.convert-object-to-jsx-vscode
   zengxingxin.sort-js-object-keys
 )
-echo "Installing vscode extensions..." &&
-  for EXTENSION in $VSCODE_EXTENSIONS; do
-    code --install-extension $EXTENSION --force
-  done
+
+echo "Installing extensions..."
+for EXTENSION in $EXTENSIONS; do
+  code --install-extension $EXTENSION --force
+done
 
 echo "Done! ✨"

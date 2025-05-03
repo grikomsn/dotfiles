@@ -14,37 +14,6 @@ fi
 # Temporary overrides
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
-# Register custom paths
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-export BUN_INSTALL=$HOME/.bun
-export PATH=$BUN_INSTALL/bin:$PATH
-
-export DENO_INSTALL=$HOME/.deno
-export PATH=$DENO_INSTALL/bin:$PATH
-
-export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
-
-export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
-export PATH=$OPENJDK_INSTALL/bin:$PATH
-
-export PNPM_HOME=$HOME/Library/pnpm
-export PATH=$PNPM_HOME:$PATH
-
-export RUST_INSTALL=$HOME/.cargo
-export PATH=$RUST_INSTALL/bin:$PATH
-
-export TOOLBOX_INSTALL="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-export PATH=$TOOLBOX_INSTALL:$PATH
-
-export PATH=$HOME/.fnm:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
-
-export PATH=$BREW_PREFIX/opt/curl/bin:$PATH
-export PATH=$BREW_PREFIX/opt/openjdk/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -52,7 +21,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="lambda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -159,6 +128,9 @@ export ADBLOCK=1
 # Integration for bun completions
 [ -s "/Users/griko/.bun/_bun" ] && source "/Users/griko/.bun/_bun"
 
+# Integration for fly completions
+eval "$(fly completion zsh)"
+
 # Integration for fnm completions
 eval "$(fnm env --use-on-cd --shell zsh)"
 
@@ -182,7 +154,9 @@ brew-everything() {
 
 # Custom function to remove empty directories
 cleanup-empty-dirs() {
-  find . -type d -empty -exec rmdir {} \;
+  while find . -type d -empty -exec rmdir {} \; >/dev/null 2>&1; do
+    :
+  done
 }
 
 # Custom function to create a data url from a file
@@ -220,13 +194,10 @@ node-update-globals() {
   corepack prepare --activate pnpm@latest
   corepack prepare --activate yarn@1.22.19
   local NODE_GLOBAL_PACKAGES=(
-    graphql
-    graphql-language-service-cli
     neovim
-    node-jose-tools
     prettier
+    react-devtools
     serve
-    speed-test
     tsx
     vercel
   )
