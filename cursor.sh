@@ -7,35 +7,42 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-APP_USER_PATH="$HOME/Library/Application\ Support/Cursor/User"
 DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.nibras.co}"
+
+CURSOR_USER_PATH="$HOME/Library/Application Support/Cursor/User"
+WINDSURF_USER_PATH="$HOME/Library/Application Support/Windsurf/User"
+VOID_USER_PATH="$HOME/Library/Application Support/Void/User"
 
 cd $HOME
 
 MKDIR_PATHS=(
   ".cursor"
-  "$APP_USER_PATH/snippets"
+  "$CURSOR_USER_PATH/snippets"
+  "$WINDSURF_USER_PATH/snippets"
+  "$VOID_USER_PATH/snippets"
 )
 for MKDIR_PATH in "${MKDIR_PATHS[@]}"; do
-  echo "Creating $MKDIR_PATH directory ..."
-  mkdir -p "$HOME/$MKDIR_PATH"
+  echo "Creating '$MKDIR_PATH' directory ..."
+  mkdir -p "$MKDIR_PATH"
 done
 
 SYMLINK_PATHS=(
-  ".vscode"
+  ".void-editor"
   ".vscode-oss"
+  ".vscode"
+  ".windsurf"
 )
 
 echo "Setup symlinks ..."
 for SYMLINK_PATH in "${SYMLINK_PATHS[@]}"; do
   echo "Creating $SYMLINK_PATH symlink ..."
-  ln -s .cursor $SYMLINK_PATH
+  ln -s "$HOME/.cursor" "$SYMLINK_PATH"
 done
 
 echo "Setup configuration files ..."
-mkdir -p $APP_USER_PATH
-curl -fsSL https://$DF_HOSTNAME/cursor-keybindings.jsonc >$APP_USER_PATH/keybindings.json
-curl -fsSL https://$DF_HOSTNAME/cursor-settings.jsonc >$APP_USER_PATH/settings.json
+mkdir -p $CURSOR_USER_PATH
+curl -fsSL https://$DF_HOSTNAME/cursor-keybindings.jsonc >"$CURSOR_USER_PATH/keybindings.json"
+curl -fsSL https://$DF_HOSTNAME/cursor-settings.jsonc >"$CURSOR_USER_PATH/settings.json"
 
 SNIPPET_PATHS=(
   "javascript.json"
@@ -45,9 +52,22 @@ SNIPPET_PATHS=(
 )
 
 echo "Setup snippets ..."
-mkdir -p $APP_USER_PATH/snippets
+mkdir -p $CURSOR_USER_PATH/snippets
 for SNIPPET_PATH in "${SNIPPET_PATHS[@]}"; do
-  curl -fsSL https://$DF_HOSTNAME/cursor-snippets/$SNIPPET_PATH >$APP_USER_PATH/snippets/$SNIPPET_PATH
+  curl -fsSL https://$DF_HOSTNAME/cursor-snippets/$SNIPPET_PATH >$CURSOR_USER_PATH/snippets/$SNIPPET_PATH
+done
+
+SYMLINK_PATHS=(
+  "$VOID_USER_PATH"
+  "$WINDSURF_USER_PATH"
+)
+
+echo "Setup cross editor symlinks ..."
+for SYMLINK_PATH in "${SYMLINK_PATHS[@]}"; do
+  cd $SYMLINK_PATH
+  rm -rf "$SYMLINK_PATH/snippets" && ln -sf "$CURSOR_USER_PATH/snippets"
+  rm -f "$SYMLINK_PATH/keybindings.json" && ln -sf "$CURSOR_USER_PATH/keybindings.json"
+  rm -f "$SYMLINK_PATH/settings.json" && ln -sf "$CURSOR_USER_PATH/settings.json"
 done
 
 EXTENSIONS=(
@@ -148,9 +168,13 @@ EXTENSIONS=(
   zengxingxin.sort-js-object-keys
 )
 
-echo "Installing extensions..."
-for EXTENSION in $EXTENSIONS; do
-  code --install-extension $EXTENSION --force
-done
+if [ -z "${SKIP_EXTENSIONS}" ]; then
+  echo "Installing extensions ..."
+  for EXTENSION in $EXTENSIONS; do
+    code --install-extension $EXTENSION --force
+  done
+else
+  echo "Skipping extensions installation ..."
+fi
 
 echo "Done! ✨"
