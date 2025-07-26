@@ -112,10 +112,6 @@ EXTENSIONS=(
   github.vscode-github-actions
   github.vscode-pull-request-github
   golang.go
-  graphql.vscode-graphql
-  graphql.vscode-graphql-execution
-  graphql.vscode-graphql-syntax
-  jamief.vscode-ssh-config-enhanced
   jock.svg
   llvm-vs-code-extensions.vscode-clangd
   loriscro.super
