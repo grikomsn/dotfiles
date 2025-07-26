@@ -25,6 +25,12 @@ export PATH=$DENO_INSTALL/bin:$PATH
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 
+export LMSTUDIO_INSTALL="$HOME/.lmstudio"
+export PATH=$LMSTUDIO_INSTALL/bin:$PATH
+
+export OPENCODE_INSTALL="$HOME/.opencode"
+export PATH=$OPENCODE_INSTALL/bin:$PATH
+
 # export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
 # export PATH=$OPENJDK_INSTALL/bin:$PATH
 

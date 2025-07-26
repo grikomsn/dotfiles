@@ -209,7 +209,3 @@ reset-launchpad() {
   defaults write com.apple.dock ResetLaunchPad -bool true
   killall Dock
 }
-
-# opencode
-export PATH=$HOME/.opencode/bin:$PATH
-

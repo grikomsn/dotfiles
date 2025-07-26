@@ -9,6 +9,7 @@ done 2>/dev/null &
 
 DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.nibras.co}"
 
+CODE_USER_PATH="$HOME/Library/Application Support/Code/User"
 CURSOR_USER_PATH="$HOME/Library/Application Support/Cursor/User"
 WINDSURF_USER_PATH="$HOME/Library/Application Support/Windsurf/User"
 VOID_USER_PATH="$HOME/Library/Application Support/Void/User"
@@ -17,6 +18,7 @@ cd $HOME
 
 MKDIR_PATHS=(
   ".cursor"
+  "$CODE_USER_PATH/snippets"
   "$CURSOR_USER_PATH/snippets"
   "$WINDSURF_USER_PATH/snippets"
   "$VOID_USER_PATH/snippets"
@@ -41,8 +43,8 @@ done
 
 echo "Setup configuration files ..."
 mkdir -p $CURSOR_USER_PATH
-curl -fsSL https://$DF_HOSTNAME/cursor-keybindings.jsonc >"$CURSOR_USER_PATH/keybindings.json"
-curl -fsSL https://$DF_HOSTNAME/cursor-settings.jsonc >"$CURSOR_USER_PATH/settings.json"
+curl -fsSL https://$DF_HOSTNAME/cursor/keybindings.json >"$CURSOR_USER_PATH/keybindings.json"
+curl -fsSL https://$DF_HOSTNAME/cursor/settings.json >"$CURSOR_USER_PATH/settings.json"
 
 SNIPPET_PATHS=(
   "javascript.json"
@@ -58,6 +60,7 @@ for SNIPPET_PATH in "${SNIPPET_PATHS[@]}"; do
 done
 
 SYMLINK_PATHS=(
+  "$CODE_USER_PATH"
   "$VOID_USER_PATH"
   "$WINDSURF_USER_PATH"
 )
@@ -74,10 +77,9 @@ EXTENSIONS=(
   1password.op-vscode
   aaron-bond.better-comments
   adpyke.vscode-userscript
-  anysphere.pyright
-  asciidoctor.asciidoctor-vscode
-  astro-build.astro-vscode
-  aykutsarac.jsoncrack-vscode
+  anysphere.cursorpyright
+  anysphere.remote-containers
+  anysphere.remote-ssh
   bierner.comment-tagged-templates
   bierner.folder-source-actions
   bierner.github-markdown-preview
@@ -88,9 +90,7 @@ EXTENSIONS=(
   bierner.markdown-preview-github-styles
   bierner.markdown-yaml-preamble
   biomejs.biome
-  bmewburn.vscode-intelephense-client
   bradlc.vscode-tailwindcss
-  bufbuild.vscode-buf
   cardinal90.multi-cursor-case-preserve
   charliermarsh.ruff
   christian-kohler.path-intellisense
@@ -117,17 +117,18 @@ EXTENSIONS=(
   graphql.vscode-graphql-syntax
   jamief.vscode-ssh-config-enhanced
   jock.svg
-  laravel.vscode-laravel
   llvm-vs-code-extensions.vscode-clangd
   loriscro.super
+  mateocerquetella.xcode-12-theme
   mikestead.dotenv
-  ms-azuretools.vscode-docker
+  mkhl.shfmt
+  ms-azuretools.vscode-containers
   ms-python.debugpy
   ms-python.python
   ms-python.vscode-pylance
+  ms-python.vscode-python-envs
   ms-vscode-remote.remote-ssh
   ms-vscode-remote.remote-ssh-edit
-  ms-vscode.azure-repos
   ms-vscode.cmake-tools
   ms-vscode.cpptools
   ms-vscode.makefile-tools
@@ -136,30 +137,25 @@ EXTENSIONS=(
   ms-vscode.remote-server
   ms-vscode.wasm-wasi-core
   ms-vsliveshare.vsliveshare
-  mtxr.sqltools
-  mtxr.sqltools-driver-mysql
-  mtxr.sqltools-driver-pg
-  mtxr.sqltools-driver-sqlite
   mylesmurphy.prettify-ts
   orta.vscode-twoslash-queries
   oven.bun-vscode
   pbkit.vscode-pbkit
-  pulumi.pulumi-lsp-client
-  pulumi.pulumi-vscode-tools
   pustelto.bracketeer
+  pveyes.aperture
   redhat.vscode-commons
   redhat.vscode-xml
   redhat.vscode-yaml
   rust-lang.rust-analyzer
   sburg.vscode-javascript-booster
   tamasfe.even-better-toml
-  tanvir.ollama-modelfile
   tauri-apps.tauri-vscode
   tldraw-org.tldraw-vscode
   tlent.jest-snapshot-language-support
   twxs.cmake
   unifiedjs.vscode-mdx
   unifiedjs.vscode-remark
+  vitest.explorer
   wallabyjs.quokka-vscode
   wmaurer.change-case
   yoavbls.pretty-ts-errors
@@ -171,7 +167,11 @@ EXTENSIONS=(
 if [ -z "${SKIP_EXTENSIONS}" ]; then
   echo "Installing extensions ..."
   for EXTENSION in $EXTENSIONS; do
-    code --install-extension $EXTENSION --force
+    if [ -n "$USE_CODE" ]; then
+      code --install-extension $EXTENSION --force
+    else
+      cursor --install-extension $EXTENSION --force
+    fi
   done
 else
   echo "Skipping extensions installation ..."
