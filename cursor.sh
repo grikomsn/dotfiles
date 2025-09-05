@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 sudo -v
 while true; do
@@ -11,8 +11,6 @@ DF_HOSTNAME="${DF_HOSTNAME:=dotfiles.nibras.co}"
 
 CODE_USER_PATH="$HOME/Library/Application Support/Code/User"
 CURSOR_USER_PATH="$HOME/Library/Application Support/Cursor/User"
-WINDSURF_USER_PATH="$HOME/Library/Application Support/Windsurf/User"
-VOID_USER_PATH="$HOME/Library/Application Support/Void/User"
 
 cd $HOME
 
@@ -20,8 +18,6 @@ MKDIR_PATHS=(
   ".cursor"
   "$CODE_USER_PATH/snippets"
   "$CURSOR_USER_PATH/snippets"
-  "$WINDSURF_USER_PATH/snippets"
-  "$VOID_USER_PATH/snippets"
 )
 for MKDIR_PATH in "${MKDIR_PATHS[@]}"; do
   echo "Creating '$MKDIR_PATH' directory ..."
@@ -29,10 +25,8 @@ for MKDIR_PATH in "${MKDIR_PATHS[@]}"; do
 done
 
 SYMLINK_PATHS=(
-  ".void-editor"
   ".vscode-oss"
   ".vscode"
-  ".windsurf"
 )
 
 echo "Setup symlinks ..."
@@ -41,28 +35,8 @@ for SYMLINK_PATH in "${SYMLINK_PATHS[@]}"; do
   ln -s "$HOME/.cursor" "$SYMLINK_PATH"
 done
 
-echo "Setup configuration files ..."
-mkdir -p $CURSOR_USER_PATH
-curl -fsSL https://$DF_HOSTNAME/cursor/keybindings.json >"$CURSOR_USER_PATH/keybindings.json"
-curl -fsSL https://$DF_HOSTNAME/cursor/settings.json >"$CURSOR_USER_PATH/settings.json"
-
-SNIPPET_PATHS=(
-  "javascript.json"
-  "javascriptreact.json"
-  "typescript.json"
-  "typescriptreact.json"
-)
-
-echo "Setup snippets ..."
-mkdir -p $CURSOR_USER_PATH/snippets
-for SNIPPET_PATH in "${SNIPPET_PATHS[@]}"; do
-  curl -fsSL https://$DF_HOSTNAME/cursor-snippets/$SNIPPET_PATH >$CURSOR_USER_PATH/snippets/$SNIPPET_PATH
-done
-
 SYMLINK_PATHS=(
   "$CODE_USER_PATH"
-  "$VOID_USER_PATH"
-  "$WINDSURF_USER_PATH"
 )
 
 echo "Setup cross editor symlinks ..."
@@ -77,6 +51,8 @@ EXTENSIONS=(
   1password.op-vscode
   aaron-bond.better-comments
   adpyke.vscode-userscript
+  antfu.icons-carbon
+  anthropic.claude-code
   anysphere.cursorpyright
   anysphere.remote-containers
   anysphere.remote-ssh
@@ -115,28 +91,23 @@ EXTENSIONS=(
   jock.svg
   llvm-vs-code-extensions.vscode-clangd
   loriscro.super
-  mateocerquetella.xcode-12-theme
   mikestead.dotenv
   mkhl.shfmt
   ms-azuretools.vscode-containers
   ms-python.debugpy
   ms-python.python
-  ms-python.vscode-pylance
   ms-python.vscode-python-envs
-  ms-vscode-remote.remote-ssh
-  ms-vscode-remote.remote-ssh-edit
   ms-vscode.cmake-tools
   ms-vscode.cpptools
   ms-vscode.makefile-tools
-  ms-vscode.remote-explorer
   ms-vscode.remote-repositories
   ms-vscode.remote-server
   ms-vscode.wasm-wasi-core
   ms-vsliveshare.vsliveshare
   mylesmurphy.prettify-ts
+  ndonfris.fish-lsp
   orta.vscode-twoslash-queries
   oven.bun-vscode
-  pbkit.vscode-pbkit
   pustelto.bracketeer
   pveyes.aperture
   redhat.vscode-commons
@@ -145,9 +116,7 @@ EXTENSIONS=(
   rust-lang.rust-analyzer
   sburg.vscode-javascript-booster
   tamasfe.even-better-toml
-  tauri-apps.tauri-vscode
   tldraw-org.tldraw-vscode
-  tlent.jest-snapshot-language-support
   twxs.cmake
   unifiedjs.vscode-mdx
   unifiedjs.vscode-remark

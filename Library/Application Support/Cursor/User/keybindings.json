@@ -113,5 +113,13 @@
     "key": "shift+cmd+k",
     "command": "-aipopup.action.modal.generate",
     "when": "editorFocus && !composerBarIsVisible"
-  }
+},
+{
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+        "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+}
 ]

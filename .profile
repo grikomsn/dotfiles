@@ -1,54 +1,91 @@
-# ./check-arch.sh
+# 00-core
+
+export ADBLOCK=1
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
+export DISABLE_OPENCOLLECTIVE=1
+export GPG_TTY=$TTY # https://stackoverflow.com/a/57591830/4273667
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# 01-brew
+
 ARCH_NAME="$(uname -m)"
-if [ "${ARCH_NAME}" = "x86_64" ]; then
-  BREW_PREFIX="/usr/local"
-elif [ "${ARCH_NAME}" = "arm64" ]; then
+if [ "${ARCH_NAME}" = "arm64" ]; then
   BREW_PREFIX="/opt/homebrew"
+else
+  BREW_PREFIX="/usr/local"
 fi
 
-eval "$($BREW_PREFIX/bin/brew shellenv)"
+# https://github.com/orgs/Homebrew/discussions/4412#discussioncomment-8651316
+if [ -d "${BREW_PREFIX}" ]; then
+  export HOMEBREW_CELLAR="${BREW_PREFIX}/Cellar"
+  export HOMEBREW_REPOSITORY="${BREW_PREFIX}/homebrew"
+  export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:$PATH"
+  export MANPATH="${BREW_PREFIX}/share/man:$MANPATH"
+  export INFOPATH="${BREW_PREFIX}/share/info:$INFOPATH"
+  $HOMEBREW_PREFIX/bin/brew shellenv | source
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  # bin extras
+  export PATH="${BREW_PREFIX}/opt/curl/bin:$PATH"
+fi
 
-export BUN_INSTALL=$HOME/.bun
-export PATH=$BUN_INSTALL/bin:$PATH
+# 02-profile
 
-export CHATWISE_INSTALL=/Applications/ChatWise.app/Contents/MacOS
-export PATH=$CHATWISE_INSTALL:$PATH
+# bun
+if [ -d "$HOME/.bun" ]; then
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
 
-export COMPOSER_INSTALL="$HOME/.config/composer/vendor/bin"
-export PATH=$COMPOSER_INSTALL:$PATH
+# chatwise
+if [ -d "/Applications/ChatWise.app" ]; then
+  export CHATWISE_INSTALL="/Applications/ChatWise.app/Contents/MacOS"
+  export PATH="$CHATWISE_INSTALL:$PATH"
+fi
 
-export DENO_INSTALL=$HOME/.deno
-export PATH=$DENO_INSTALL/bin:$PATH
+# deno
+if [ -d "$HOME/.deno" ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
 
-export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
+# fnm
+fnm env | source
 
-export LMSTUDIO_INSTALL="$HOME/.lmstudio"
-export PATH=$LMSTUDIO_INSTALL/bin:$PATH
+# fzf
+fzf --fish | source
 
-export OPENCODE_INSTALL="$HOME/.opencode"
-export PATH=$OPENCODE_INSTALL/bin:$PATH
+# go
+if [ -d "$HOME/.go" ]; then
+  export GOPATH="$HOME/.go"
+  export PATH="$GOPATH/bin:$PATH"
+fi
 
-# export OPENJDK_INSTALL=$BREW_PREFIX/opt/openjdk
-# export PATH=$OPENJDK_INSTALL/bin:$PATH
+# lmstudio
+if [ -d "$HOME/.lmstudio" ]; then
+  export LM_STUDIO_INSTALL="$HOME/.lmstudio"
+  export PATH="$LM_STUDIO_INSTALL/bin:$PATH"
+fi
 
-export PNPM_HOME=$HOME/Library/pnpm
-export PATH=$PNPM_HOME:$PATH
+# mkcert
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
-export TOOLBOX_INSTALL="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-export PATH=$TOOLBOX_INSTALL:$PATH
+# orbstack
+if [ -f "$HOME/.orbstack/shell/init2.fish" ]; then
+  source "$HOME/.orbstack/shell/init2.fish" 2>/dev/null || :
+fi
 
-export RUST_INSTALL=$HOME/.cargo
-export PATH=$RUST_INSTALL/bin:$PATH
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
-export PATH=$HOME/.fnm:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
+# rust
+if [ -d "$HOME/.cargo" ]; then
+  export RUST_INSTALL="$HOME/.cargo"
+  export PATH="$RUST_INSTALL/bin:$PATH"
+fi
 
-export PATH=$BREW_PREFIX/opt/curl/bin:$PATH
-export PATH=$BREW_PREFIX/opt/openjdk/bin:$PATH
-
-source $HOME/.cargo/env
-source $HOME/.orbstack/shell/init.zsh 2>/dev/null || :
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"

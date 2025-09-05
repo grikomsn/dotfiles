@@ -1,0 +1,9 @@
+.config/fish
+.config/macscreens
+.gitattributes
+.gitconfig
+.gitignore
+.profile
+.ssh/config
+Library/Application Support/Cursor/User/keybindings.json
+Library/Application Support/Cursor/User/settings.json

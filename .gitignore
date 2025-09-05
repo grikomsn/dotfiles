@@ -1,5 +1,10 @@
+__pycache__
 .DS_Store
-.env*
+.turbo
 .vercel
-*.log
-node_modules/
+*.env*
+*.log*
+*.tsbuildinfo
+node_modules
+
+!.env.example
