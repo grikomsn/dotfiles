@@ -5,5 +5,6 @@
 .gitignore
 .profile
 .ssh/config
+Brewfile
 Library/Application Support/Cursor/User/keybindings.json
 Library/Application Support/Cursor/User/settings.json
